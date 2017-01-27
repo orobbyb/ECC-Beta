@@ -50,8 +50,18 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.3)
     debug_inspector (0.0.2)
+    elasticsearch (5.0.1)
+      elasticsearch-api (= 5.0.1)
+      elasticsearch-transport (= 5.0.1)
+    elasticsearch-api (5.0.1)
+      multi_json
+    elasticsearch-transport (5.0.1)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.7.0)
+    faraday (0.11.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -77,6 +87,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    multipart-post (2.0.0)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -156,6 +167,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
+  elasticsearch
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
