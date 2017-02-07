@@ -1,0 +1,10 @@
+<%#Search form partial file - Displays a search box wherever this file is rendered%>
+<%#Can be used by adding <%= render "search/search"%>
+
+<div>
+  <%= form_tag("/search", :method => "get") do %>
+    <%= label_tag :query, "Search for:" %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
