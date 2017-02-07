@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/search' => 'search#search'
   resources :documents
   get 'admin' => 'admin#index'
 
