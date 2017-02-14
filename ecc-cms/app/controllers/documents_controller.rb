@@ -1,5 +1,4 @@
 class DocumentsController < ApplicationController
-  before_action :authorize, :except => [:show]
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
   # GET /documents
@@ -70,6 +69,6 @@ class DocumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:title, :content)
+      params.require(:document).permit(:description, :disclaimer, :date, :organization_url, :source_value, :source_url, :taxonomy, :version)
     end
 end
