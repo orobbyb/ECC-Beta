@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @document.description %>
+</p>
+
+<p>
+  <strong>Disclaimer:</strong>
+  <%= @document.disclaimer %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @document.date %>
+</p>
+
+<p>
+  <strong>Organization url:</strong>
+  <%= @document.organization_url %>
+</p>
+
+<p>
+  <strong>Source value:</strong>
+  <%= @document.source_value %>
+</p>
+
+<p>
+  <strong>Source url:</strong>
+  <%= @document.source_url %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @document.version %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @document.category %>
+</p>
+
+<p>
+  <strong>Topics:</strong>
+  <%= @document.topics %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

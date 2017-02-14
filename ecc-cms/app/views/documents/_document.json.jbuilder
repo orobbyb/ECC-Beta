@@ -1,0 +1,2 @@
+json.extract! document, :id, :description, :disclaimer, :date, :organization_url, :source_value, :source_url, :version, :category, :topics, :created_at, :updated_at
+json.url document_url(document, format: :json)
