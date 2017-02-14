@@ -17,7 +17,7 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create document" do
     assert_difference('Document.count') do
-      post documents_url, params: { document: { date: @document.date, description: @document.description, disclaimer: @document.disclaimer, organization_url: @document.organization_url, source_url: @document.source_url, source_value: @document.source_value, taxonomy: @document.taxonomy, version: @document.version } }
+      post documents_url, params: { document: { category: @document.category, date: @document.date, description: @document.description, disclaimer: @document.disclaimer, organization_url: @document.organization_url, source_url: @document.source_url, source_value: @document.source_value, topics: @document.topics, version: @document.version } }
     end
 
     assert_redirected_to document_url(Document.last)
@@ -34,7 +34,7 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update document" do
-    patch document_url(@document), params: { document: { date: @document.date, description: @document.description, disclaimer: @document.disclaimer, organization_url: @document.organization_url, source_url: @document.source_url, source_value: @document.source_value, taxonomy: @document.taxonomy, version: @document.version } }
+    patch document_url(@document), params: { document: { category: @document.category, date: @document.date, description: @document.description, disclaimer: @document.disclaimer, organization_url: @document.organization_url, source_url: @document.source_url, source_value: @document.source_value, topics: @document.topics, version: @document.version } }
     assert_redirected_to document_url(@document)
   end
 
