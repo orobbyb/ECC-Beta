@@ -7,8 +7,9 @@ class CreateDocuments < ActiveRecord::Migration[5.0]
       t.string :organization_url
       t.string :source_value
       t.string :source_url
-      t.text :taxonomy
       t.string :version
+      t.string :category
+      t.string :topics
 
       t.timestamps
     end

@@ -31,13 +31,18 @@
 </p>
 
 <p>
-  <strong>Taxonomy:</strong>
-  <%= @document.taxonomy %>
+  <strong>Version:</strong>
+  <%= @document.version %>
 </p>
 
 <p>
-  <strong>Version:</strong>
-  <%= @document.version %>
+  <strong>Category:</strong>
+  <%= @document.category %>
+</p>
+
+<p>
+  <strong>Topics:</strong>
+  <%= @document.topics %>
 </p>
 
 <%= link_to 'Edit', edit_document_path(@document) %> |

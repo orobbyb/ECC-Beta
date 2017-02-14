@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :documents
+  resources :documents
   get '/search' => 'search#search'
   resources :documents
   get 'admin' => 'admin#index'

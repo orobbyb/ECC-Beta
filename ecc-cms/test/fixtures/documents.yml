@@ -7,8 +7,9 @@ one:
   organization_url: MyString
   source_value: MyString
   source_url: MyString
-  taxonomy: MyText
   version: MyString
+  category: MyString
+  topics: MyString
 
 two:
   description: MyText
@@ -17,5 +18,6 @@ two:
   organization_url: MyString
   source_value: MyString
   source_url: MyString
-  taxonomy: MyText
   version: MyString
+  category: MyString
+  topics: MyString

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214074541) do
+ActiveRecord::Schema.define(version: 20170214203518) do
 
   create_table "documents", force: :cascade do |t|
     t.text     "description"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20170214074541) do
     t.string   "organization_url"
     t.string   "source_value"
     t.string   "source_url"
-    t.text     "taxonomy"
     t.string   "version"
+    t.string   "category"
+    t.string   "topics"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
