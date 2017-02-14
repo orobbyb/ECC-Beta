@@ -1,13 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @document.title %>
+  <strong>Description:</strong>
+  <%= @document.description %>
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @document.content %>
+  <strong>Disclaimer:</strong>
+  <%= @document.disclaimer %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @document.date %>
+</p>
+
+<p>
+  <strong>Organization url:</strong>
+  <%= @document.organization_url %>
+</p>
+
+<p>
+  <strong>Source value:</strong>
+  <%= @document.source_value %>
+</p>
+
+<p>
+  <strong>Source url:</strong>
+  <%= @document.source_url %>
+</p>
+
+<p>
+  <strong>Taxonomy:</strong>
+  <%= @document.taxonomy %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @document.version %>
 </p>
 
 <%= link_to 'Edit', edit_document_path(@document) %> |

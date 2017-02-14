@@ -12,13 +12,43 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
   </div>
 
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.label :disclaimer %>
+    <%= f.text_area :disclaimer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :organization_url %>
+    <%= f.text_field :organization_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :source_value %>
+    <%= f.text_field :source_value %>
+  </div>
+
+  <div class="field">
+    <%= f.label :source_url %>
+    <%= f.text_field :source_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :taxonomy %>
+    <%= f.text_area :taxonomy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :version %>
+    <%= f.text_field :version %>
   </div>
 
   <div class="actions">
