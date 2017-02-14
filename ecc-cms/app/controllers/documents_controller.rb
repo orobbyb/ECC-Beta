@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  before_action :authorize
+  before_action :authorize, :except => [:show]
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
   # GET /documents
