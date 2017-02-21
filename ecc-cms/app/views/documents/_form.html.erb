@@ -1,3 +1,22 @@
+
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+    $('select').material_select();
+  });
+
+</script>
+
+</head>
+
 <%= form_for(document) do |f| %>
   <% if document.errors.any? %>
     <div id="error_explanation">
@@ -45,10 +64,18 @@
     <%= f.label :version %>
     <%= f.text_field :version %>
   </div>
-
-  <div class="field">
-    <%= f.label :category %>
-    <%= f.text_field :category %>
+  
+  <div class="input-field col s12">
+    <select multiple>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="business">Business</option>
+      <option value="life sciences">Life Sciences</option>
+      <option value="physical sciences">Physical Sciences</option>
+      <option value="engineering">Engineering</option>
+      <option value="social and behavorial sciences">Social and Behavorial Sciences</option>
+      <option value="arts and humanities">Arts and Humanities</option>
+    </select>
+    <label>Category</label>
   </div>
 
   <div class="field">
