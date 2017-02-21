@@ -10,11 +10,12 @@ class DocumentsController < ApplicationController
   # GET /documents/1
   # GET /documents/1.json
   def show
+    @document = Document.find(params['id'])
   end
 
   # GET /documents/new
   def new
-    @document = Document.new
+    @document
   end
 
   # GET /documents/1/edit
@@ -39,7 +40,7 @@ class DocumentsController < ApplicationController
 
   # PATCH/PUT /documents/1
   # PATCH/PUT /documents/1.json
-  def update
+  def update 
     respond_to do |format|
       if @document.update(document_params)
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }
@@ -57,7 +58,7 @@ class DocumentsController < ApplicationController
     @document.destroy
     respond_to do |format|
       format.html { redirect_to documents_url, notice: 'Document was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { head :no_est4/testcontent }
     end
   end
 
@@ -72,3 +73,4 @@ class DocumentsController < ApplicationController
       params.require(:document).permit(:description, :disclaimer, :date, :organization_url, :source_value, :source_url, :version, :category, :topics)
     end
 end
+
