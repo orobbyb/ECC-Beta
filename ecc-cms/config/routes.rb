@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  resources :documents
-  resources :documents
+  
   get '/search' => 'search#search'
-  resources :documents
   get 'admin' => 'admin#index'
 
+  #Start single document routs
+  get 'ecodes/:category/:org/:id' => 'documents#show', :as => :document
+  get 'ecodes/:category/:org/:id/edit'=> 'documents#edit', :as => :edit_document
+  patch 'ecodes/:category/:org/:id' => 'documents#update'
+  get '/documents/new', to: 'docuemets#new'
+  post '/documents', to: 'documents#create'
+  delete 'ecodes/:category/:org/:id' => 'documents#destroy'
+  #End single Document Routes
+  resources :documents
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
@@ -12,5 +19,9 @@ Rails.application.routes.draw do
   end
   get 'logout' => 'sessions#destroy'
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #Start Static Page Routes
+  get '/' => 'static#home'
+  get '/about' => 'static#about'
+  #End Static Page Routes
 end
