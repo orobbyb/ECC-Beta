@@ -1,0 +1,89 @@
+
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+    $('select').material_select();
+  });
+
+</script>
+
+</head>
+
+<%= form_for(document) do |f| %>
+  <% if document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(document.errors.count, "error") %> prohibited this document from being saved:</h2>
+
+      <ul>
+      <% document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :disclaimer %>
+    <%= f.text_area :disclaimer %>
+  </div>
+
+  <input type="date" class="datepicker">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :organization_url %>
+    <%= f.text_field :organization_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :source_value %>
+    <%= f.text_field :source_value %>
+  </div>
+
+  <div class="field">
+    <%= f.label :source_url %>
+    <%= f.text_field :source_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :version %>
+    <%= f.text_field :version %>
+  </div>
+  
+  <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="business">Business</option>
+      <option value="life sciences">Life Sciences</option>
+      <option value="physical sciences">Physical Sciences</option>
+      <option value="engineering">Engineering</option>
+      <option value="social and behavorial sciences">Social and Behavorial Sciences</option>
+      <option value="arts and humanities">Arts and Humanities</option>
+    </select>
+    <label>Category</label>
+  </div>
+
+  <div class="field">
+    <%= f.label :topics %>
+    <%= f.text_field :topics %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
