@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
 
   #Start single document routs
-  get 'ecodes/:category/:org/:id' => 'documents#show', :as => :document
-  get 'ecodes/:category/:org/:id/edit'=> 'documents#edit', :as => :edit_document
-  patch 'ecodes/:category/:org/:id' => 'documents#update'
+  get 'ecodes/:org/:id' => 'documents#show', :as => :document
+  get 'ecodes/:org/:id/edit'=> 'documents#edit', :as => :edit_document
+  patch 'ecodes/:org/:id' => 'documents#update'
   get '/documents/new', to: 'documents#new'
   post '/documents', to: 'documents#create'
   delete 'ecodes/:category/:org/:id' => 'documents#destroy'
