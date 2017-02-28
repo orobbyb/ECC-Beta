@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authorize
+  # before_action :authorize # just for testing
   protect_from_forgery with: :exception
 
     # ...

@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
+  # TODO: Import Elasticsearch here and migrate all db tasks
   # GET /documents
   # GET /documents.json
   def index
