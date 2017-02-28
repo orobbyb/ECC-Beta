@@ -14,6 +14,8 @@ $(document).ready(function() {
   });
 
 </script>
+  <link rel="stylesheet" type="text/css" href="/css/trix.css">
+  <script type="text/javascript" src="/js/trix.js"></script>
 
 </head>
 
@@ -38,6 +40,12 @@ $(document).ready(function() {
   <div class="field">
     <%= f.label :disclaimer %>
     <%= f.text_area :disclaimer %>
+  </div>
+
+  <%#Trix: Rich Test Editor Component%>
+  <div>
+    <input id="body" value="Editor content goes here" type="hidden" name="body">
+    <trix-editor input="body"></trix-editor>
   </div>
 
   <input type="date" class="datepicker">
