@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # TODO: Create logic for authentication to use with elastic search
     user = User.find_by(name: params[:name])
     if user.try(:authenticate, params[:password])
       session[:user_id] = user.id
