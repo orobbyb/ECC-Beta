@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # before_action :authorize # needed to allow for site to work
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
 
     # ...
 
