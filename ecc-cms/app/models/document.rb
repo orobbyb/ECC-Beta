@@ -5,3 +5,4 @@ class Document < ApplicationRecord
   include Elasticsearch::Model::Callbacks
 end
 
+Document.import
