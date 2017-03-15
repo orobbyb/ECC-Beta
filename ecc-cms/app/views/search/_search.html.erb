@@ -2,9 +2,17 @@
 <%#Can be used by adding <%= render "search/search"%>
 
 <div>
-  <%= form_tag("/search", :method => "get") do %>
-    <%= label_tag :q, "Search for:" %>
-    <%= text_field_tag :q, params[:q] %>
-    <%= submit_tag "Search" %>
+  <%#<%= form_tag("/search", :method => "get") do %>
+    <%#<%= label_tag :q, "Search for:" %>%>
+    <%#<%= text_field_tag :q, params[:q] %>%>
+    <%#<%= submit_tag "Search" %>%>
+  <%#<% end %>%>
+
+  <%= form_for search_path, method: :get do |f| %>
+    <p>
+      <%= f.label "Search for" %>
+      <%= text_field_tag :q, params[:q] %>
+      <%= submit_tag "Go", name: nil %>
+    </p>
   <% end %>
 </div>
