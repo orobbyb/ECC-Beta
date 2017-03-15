@@ -6,3 +6,16 @@ class Document < ApplicationRecord
 end
 
 Document.import force: true
+
+def self.search(query)
+  __elasticsearch__.search(
+    {
+      query: {
+        multi_match: {
+          query: query,
+          fields: ['description^10', 'text']
+        }
+      }
+    }
+  )
+end
