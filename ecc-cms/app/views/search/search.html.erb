@@ -12,7 +12,7 @@
   <% @documents.each do |document| %>
     <li>
       <h3>
-        <%= link_to document.title, controller: "documents", action: "show", id: document._id%>
+        <%= link_to document.description, controller: "documents", action: "show", id: document._id%>
       </h3>
     </li>
   <% end %>
