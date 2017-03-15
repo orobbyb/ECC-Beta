@@ -9,10 +9,10 @@
 <% end %>
 
 <ul>
-  <% @documents.each do |document| %>
+  <% @document.each do |document| %>
     <li>
       <h3>
-        <%= link_to article.title, controller: "documents", action: "show", id: document._id%>
+        <%= link_to document.title, controller: "documents", action: "show", id: document._id%>
       </h3>
     </li>
   <% end %>

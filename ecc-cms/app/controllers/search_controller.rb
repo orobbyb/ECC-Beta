@@ -3,9 +3,9 @@ class SearchController < ApplicationController
     # Use result from DB to redirect the user to the correct location
     def search
         if params[:q].nil?
-            @articles = []
+            @documents = []
         else
-            @articles = Article.search params[:q]
+            @documents = Document.search params[:q]
         end
     end
 end
