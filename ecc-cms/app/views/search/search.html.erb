@@ -9,7 +9,7 @@
 <% end %>
 
 <ul>
-  <% @document.each do |document| %>
+  <% @documents.each do |document| %>
     <li>
       <h3>
         <%= link_to document.title, controller: "documents", action: "show", id: document._id%>
