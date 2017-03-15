@@ -5,15 +5,22 @@
 <table>
   <thead>
     <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Institution</th>
+      <th>Contributor</th>
+      <th>Code versions</th>
+      <th>Date publish</th>
+      <th>Ecc date</th>
+      <th>Author site</th>
+      <th>Orig url</th>
       <th>Description</th>
-      <th>Disclaimer</th>
-      <th>Date</th>
-      <th>Organization url</th>
-      <th>Source value</th>
-      <th>Source url</th>
-      <th>Version</th>
-      <th>Category</th>
+      <th>Notes</th>
+      <th>Doi</th>
+      <th>Copyright</th>
       <th>Topics</th>
+      <th>Fields</th>
+      <th>Backup url</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,18 +28,26 @@
   <tbody>
     <% @documents.each do |document| %>
       <tr>
+        <td><%= document.title %></td>
+        <td><%= document.year %></td>
+        <td><%= document.institution %></td>
+        <td><%= document.contributor %></td>
+        <td><%= document.code_versions %></td>
+        <td><%= document.date_publish %></td>
+        <td><%= document.ecc_date %></td>
+        <td><%= document.author_site %></td>
+        <td><%= document.orig_url %></td>
         <td><%= document.description %></td>
-        <td><%= document.disclaimer %></td>
-        <td><%= document.date %></td>
-        <td><%= document.organization_url %></td>
-        <td><%= document.source_value %></td>
-        <td><%= document.source_url %></td>
-        <td><%= document.version %></td>
-        <td><%= document.category %></td>
+        <td><%= document.notes %></td>
+        <td><%= document.doi %></td>
+        <td><%= document.copyright %></td>
         <td><%= document.topics %></td>
-	<td><%= link_to 'Show', document_url(:category => document.category,:org => document.organization_url,:id => document.id) %></td>
-        <td><%= link_to 'Edit',edit_document_path(:org => document.organization_url,:id => document.id)%></td>
-       </tr>
+        <td><%= document.fields %></td>
+        <td><%= document.backup_url %></td>
+        <td><%= link_to 'Show', document %></td>
+        <td><%= link_to 'Edit', edit_document_path(document) %></td>
+        <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

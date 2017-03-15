@@ -17,7 +17,7 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create document" do
     assert_difference('Document.count') do
-      post documents_url, params: { document: { category: @document.category, date: @document.date, description: @document.description, disclaimer: @document.disclaimer, organization_url: @document.organization_url, source_url: @document.source_url, source_value: @document.source_value, topics: @document.topics, version: @document.version } }
+      post documents_url, params: { document: { author_site: @document.author_site, backup_url: @document.backup_url, code_versions: @document.code_versions, contributor: @document.contributor, copyright: @document.copyright, date_publish: @document.date_publish, description: @document.description, doi: @document.doi, ecc_date: @document.ecc_date, fields: @document.fields, institution: @document.institution, notes: @document.notes, orig_url: @document.orig_url, title: @document.title, topics: @document.topics, year: @document.year } }
     end
 
     assert_redirected_to document_url(Document.last)
@@ -34,7 +34,7 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update document" do
-    patch document_url(@document), params: { document: { category: @document.category, date: @document.date, description: @document.description, disclaimer: @document.disclaimer, organization_url: @document.organization_url, source_url: @document.source_url, source_value: @document.source_value, topics: @document.topics, version: @document.version } }
+    patch document_url(@document), params: { document: { author_site: @document.author_site, backup_url: @document.backup_url, code_versions: @document.code_versions, contributor: @document.contributor, copyright: @document.copyright, date_publish: @document.date_publish, description: @document.description, doi: @document.doi, ecc_date: @document.ecc_date, fields: @document.fields, institution: @document.institution, notes: @document.notes, orig_url: @document.orig_url, title: @document.title, topics: @document.topics, year: @document.year } }
     assert_redirected_to document_url(@document)
   end
 

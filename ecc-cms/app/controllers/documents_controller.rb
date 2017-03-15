@@ -1,7 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
-  # TODO: Import Elasticsearch here and migrate all db tasks
   # GET /documents
   # GET /documents.json
   def index
@@ -11,7 +10,6 @@ class DocumentsController < ApplicationController
   # GET /documents/1
   # GET /documents/1.json
   def show
-    @document = Document.find(params['id'])
   end
 
   # GET /documents/new
@@ -30,7 +28,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.save
-        format.html { redirect_to '/documents', notice: 'Document was successfully created.', id: @document.id}
+        format.html { redirect_to @document, notice: 'Document was successfully created.' }
         format.json { render :show, status: :created, location: @document }
       else
         format.html { render :new }
@@ -41,7 +39,7 @@ class DocumentsController < ApplicationController
 
   # PATCH/PUT /documents/1
   # PATCH/PUT /documents/1.json
-  def update 
+  def update
     respond_to do |format|
       if @document.update(document_params)
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }
@@ -59,7 +57,7 @@ class DocumentsController < ApplicationController
     @document.destroy
     respond_to do |format|
       format.html { redirect_to documents_url, notice: 'Document was successfully destroyed.' }
-      format.json { head :no_est4/testcontent }
+      format.json { head :no_content }
     end
   end
 
@@ -71,7 +69,6 @@ class DocumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
-      params.require(:document).permit(:description, :disclaimer, :date, :organization_url, :source_value, :source_url, :version, :category, :topics)
+      params.require(:document).permit(:title, :year, :institution, :contributor, :code_versions, :date_publish, :ecc_date, :author_site, :orig_url, :description, :notes, :doi, :copyright, :topics, :fields, :backup_url)
     end
 end
-
