@@ -10,27 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214203518) do
+ActiveRecord::Schema.define(version: 20170315094909) do
 
   create_table "documents", force: :cascade do |t|
+    t.string   "title"
+    t.text     "year"
+    t.string   "institution"
+    t.string   "contributor"
+    t.string   "code_versions"
+    t.date     "date_publish"
+    t.date     "ecc_date"
+    t.string   "author_site"
+    t.string   "orig_url"
     t.text     "description"
-    t.text     "disclaimer"
-    t.date     "date"
-    t.string   "organization_url"
-    t.string   "source_value"
-    t.string   "source_url"
-    t.string   "version"
-    t.string   "category"
-    t.string   "topics"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.text     "notes"
+    t.string   "doi"
+    t.text     "copyright"
+    t.text     "topics"
+    t.text     "fields"
+    t.string   "backup_url"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
