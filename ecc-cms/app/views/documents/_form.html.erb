@@ -63,9 +63,9 @@
 
   <div class="field">
     <%= f.label :description %>
+    <%= f.input :description, as: :trix_editor %>
     <%= f.trix_editor :description %>
     <%= f.trix_editor :body %>
-    <%= f.input :description, as: :trix_editor %>
   </div>
 
   <div class="field">
