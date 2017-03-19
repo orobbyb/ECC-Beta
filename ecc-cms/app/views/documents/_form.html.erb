@@ -63,9 +63,7 @@
 
   <div class="field">
     <%= f.label :description %>
-    <label><%=raw @document.description %></label>
-    <input type="hidden" name="document[description]" id="document_description" value=<%=raw @document.description %>>
-    <trix-editor input="document_description"></trix-editor>
+    <%= f.trix_editor :description %>
   </div>
 
   <div class="field">
