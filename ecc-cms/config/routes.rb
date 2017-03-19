@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
 
   #Start single document routs
-  get 'ecodes/:org/:id' => 'documents#show', :as => :document
+  get 'ecodes/:org/:id' => 'documents#show', :as => :show_document
   get 'ecodes/:org/:id/edit'=> 'documents#edit', :as => :edit_document
   patch 'ecodes/:org/:id' => 'documents#update'
   get '/documents/new', to: 'documents#new'
