@@ -46,7 +46,7 @@
         <td><%= document.backup_url %></td>
         <td><%= link_to 'show_document', document %></td>
         <td><%= link_to 'Edit', edit_document_path(:org => document.institution, :id => document.id) %></td>
-        <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', delete_document_path(:org => document.institution, :id => document.id) %></td>
       </tr>
     <% end %>
   </tbody>

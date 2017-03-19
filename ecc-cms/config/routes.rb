@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   patch 'ecodes/:org/:id' => 'documents#update'
   get '/documents/new', to: 'documents#new'
   post '/documents', to: 'documents#create'
-  delete 'ecodes/:category/:org/:id' => 'documents#destroy'
+  delete 'ecodes/:org/:id' => 'documents#destroy', :as => :delete_document
   #End single Document Routes
   resources :documents
   controller :sessions do
