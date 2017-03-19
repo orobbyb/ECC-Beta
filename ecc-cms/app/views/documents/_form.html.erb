@@ -58,7 +58,9 @@
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%#<%= f.text_area :description%> <%#Replacing with TRIX%>
+    <input id="description" type="hidden" name="description">
+    <trix-editor input="description"></trix-editor>
   </div>
 
   <div class="field">
