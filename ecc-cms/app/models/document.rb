@@ -35,23 +35,23 @@ class Document
   # validates :name, presence: true
 
   # Internal Methods over here
-  def document
-    Document.search(
-      { query: {
-          has_parent: {
-            type: 'document',
-            query: {
-              bool: {
-                filter: {
-                  ids: { values: [ self.id ] }
-                }
-              }
-            }
-          }
-        },
-        size: 100
-      },
-      { type: 'document' }
-  )
-  end
+  # def document
+  #   Document.search(
+  #     { query: {
+  #         has_parent: {
+  #           type: 'document',
+  #           query: {
+  #             bool: {
+  #               filter: {
+  #                 ids: { values: [ self.id ] }
+  #               }
+  #             }
+  #           }
+  #         }
+  #       },
+  #       size: 100
+  #     },
+  #     { type: 'document' }
+  # )
+  # end
 end

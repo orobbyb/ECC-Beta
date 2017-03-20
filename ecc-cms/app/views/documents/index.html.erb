@@ -37,14 +37,14 @@
         <td><%= document.ecc_date %></td>
         <td><%= document.author_site %></td>
         <td><%= document.orig_url %></td>
-        <td><%= document.description %></td>
+        <td><%= document.description.html_safe %></td>
         <td><%= document.notes %></td>
         <td><%= document.doi %></td>
         <td><%= document.copyright %></td>
         <td><%= document.topics %></td>
         <td><%= document.fields %></td>
         <td><%= document.backup_url %></td>
-        <td><%= link_to 'show_document', document %></td>
+        <td><%= link_to 'Show', document %></td>
         <td><%= link_to 'Edit', edit_document_path(:org => document.institution, :id => document.id) %></td>
         <td><%= link_to 'Destroy', delete_document_path(:org => document.institution, :id => document.id) %></td>
       </tr>
