@@ -35,7 +35,7 @@ class Document
   # validates :name, presence: true
 
   # Internal Methods over here
-  def documents
+  def document
     Document.search(
       { query: {
           has_parent: {
@@ -53,9 +53,5 @@ class Document
       },
       { type: 'document' }
   )
-  end
-
-  def to_param
-    [id, name.parameterize].join('-')
   end
 end
