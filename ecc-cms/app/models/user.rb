@@ -8,8 +8,10 @@ class User
 
     # Name the Index over here
     index_name 'user'
+    
+    # attributes
     attribute :name, String, mapping: {index: "not_analyzed"}
-    attribute :password, String, mapping: {index: "not_analyzed"}
+    attribute :password_digest, String, mapping: {index: "not_analyzed"}
 
     def self.find_by_name(name)
     users = User.search(query:{match:{name: name}})
