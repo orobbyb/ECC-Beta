@@ -8,7 +8,7 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Documents.all
+    @documents = Documents.all sort: 'title.raw', _source: ['title']
   end
 
   # GET /documents/1

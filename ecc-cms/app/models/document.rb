@@ -39,7 +39,7 @@ class Document
     Document.search(
       { query: {
           has_parent: {
-            type: 'artist',
+            type: 'document',
             query: {
               bool: {
                 filter: {
