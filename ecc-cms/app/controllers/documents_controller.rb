@@ -1,10 +1,14 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
+  rescue_from Elasticsearch::Persistence::Repository::DocumentNotFound do
+    render file: "public/404.html", status: 404, layout: false
+  end
+  
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Document.all
+    @documents = Documents.all
   end
 
   # GET /documents/1

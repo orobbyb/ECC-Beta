@@ -5,7 +5,7 @@ class Document
   include Elasticsearch::Persistence::Model
 
   # Name the Index over here
-  index_name [Rails.application.engine_name, Rails.env].join('-')
+  index_name 'Document'
 
   # Define the indexing over here - OPTIMIZE THIS!
   analyzed_and_raw = { fields: {
