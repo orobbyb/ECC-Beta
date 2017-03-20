@@ -1,4 +1,4 @@
-Elasticsearch::Persistence.client = Elasticsearch::Client.new host: 'ecc.ideashop.iit.edu:8085'
+Elasticsearch::Persistence.client = Elasticsearch::Client.new host: 'localhost:9200'
 
 if Rails.env.development?
   logger           = ActiveSupport::Logger.new(STDERR)
