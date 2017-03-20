@@ -1,4 +1,23 @@
-class User < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
-  has_secure_password
+require 'elasticsearch/persistence/model'
+
+class User
+    # Use ES Presistance
+    include Elasticsearch::Persistence::Model
+    include ActiveModel::SecurePassword
+    has_secure_password(validations: false)
+
+    # Name the Index over here
+    index_name 'user'
+    attribute :name, String, mapping: {index: "not_analyzed"}
+    attribute :password, String, mapping: {index: "not_analyzed"}
+
+    def self.find_by_name(name)
+    users = User.search(query:{match:{name: name}})
+    return nil if users.blank?
+    return nil if users.count > 1
+    return users.first
+    rescue => ex
+      return nil
+  end
+
 end
