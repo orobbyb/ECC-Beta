@@ -11,6 +11,13 @@ class DocumentsController < ApplicationController
     @documents = Document.all
   end
 
+  def search 
+    #1. Fetch documents by keywords
+    #2. Apply other filters 
+    response = Document.find(params) 
+    @documents = response.records.to_a
+  end
+
   # GET /documents/1
   # GET /documents/1.json
   def show

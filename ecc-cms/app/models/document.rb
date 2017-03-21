@@ -33,7 +33,6 @@ class Document
   
   # Validations over here
   # validates :name, presence: true
-
   # Internal Methods over here
   # def document
   #   Document.search(
@@ -54,4 +53,7 @@ class Document
   #     { type: 'document' }
   # )
   # end
+
+
+
 end
