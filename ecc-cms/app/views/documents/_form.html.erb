@@ -11,11 +11,9 @@ $(document).ready(function() {
 $('.datepicker').pickadate({   
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 30, // Creates a dropdown of 10 years to control year
-            format: 'dd/mm/yyyy',
-            min: -10,
-            max: true,
+            format: 'dd-mm-yyyy',
             closeOnSelect: true,
-            closeOnClear: true,
+            closeOnClear: true
         });
     $('select').material_select();
   });
@@ -63,12 +61,14 @@ $('.datepicker').pickadate({
     <%= f.text_field :code_versions %>
   </div>
 
-  <div class="datepicker">
+  <div>
+    <%= f.label :date_publish %>
+    <%= f.text_field :date_publish, :class=> "datepicker"%>
   </div>
 
-  <input type="date" class="datepicker">
+  <div>
     <%= f.label :ecc_date %>
-    <%= f.date_select :ecc_date %>
+    <%= f.text_field :ecc_date, :class=> "datepicker"%>
   </div>
 
   <div class="field">
