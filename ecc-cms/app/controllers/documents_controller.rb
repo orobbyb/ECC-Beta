@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authorize, only: [:show]
+  
   rescue_from Elasticsearch::Persistence::Repository::DocumentNotFound do
     render file: "public/404.html", status: 404, layout: false
   end
