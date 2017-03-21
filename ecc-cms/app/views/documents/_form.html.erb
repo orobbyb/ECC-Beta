@@ -8,6 +8,15 @@
 
 <script>
 $(document).ready(function() {
+$('.datepicker').pickadate({   
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 30, // Creates a dropdown of 10 years to control year
+            format: 'dd/mm/yyyy',
+            min: -10,
+            max: true,
+            closeOnSelect: true,
+            closeOnClear: true,
+        });
     $('select').material_select();
   });
 </script>
@@ -54,9 +63,7 @@ $(document).ready(function() {
     <%= f.text_field :code_versions %>
   </div>
 
-  <input type="date" class="datepicker">
-    <%= f.label :date_publish %>
-    <%= f.date_select :date_publish %>
+  <div class="datepicker">
   </div>
 
   <input type="date" class="datepicker">
