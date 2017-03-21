@@ -1,5 +1,5 @@
 config = {
-  host: "ecc.ideashop.iit.edu:8080",
+  host: "localhost:9200",
   transport_options: {
     request: { timeout: 5 }
   },

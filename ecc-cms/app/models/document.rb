@@ -27,8 +27,8 @@ class Document
   attribute :notes, String, mapping: analyzed_and_raw
   attribute :doi, String, mapping: analyzed_and_raw
   attribute :copyright, String, mapping: analyzed_and_raw
-  attribute :topics, String, default: [], mapping: analyzed_and_raw
-  attribute :fields, String, default: [], mapping: analyzed_and_raw
+  attribute :topics, String, mapping: analyzed_and_raw
+  attribute :fields, String, mapping: analyzed_and_raw
   attribute :backup_url, String, mapping: analyzed_and_raw
   
   # Validations over here
