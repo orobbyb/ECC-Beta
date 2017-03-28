@@ -1,6 +1,6 @@
 require 'elasticsearch/persistence/model'
 
-class Fixedindex
+class FixedIndex
     # Use ES Presistance
     include Elasticsearch::Persistence::Model
 
@@ -12,7 +12,7 @@ class Fixedindex
     attribute :restrictions, String, mapping: {index: "not_analyzed"}
 
     def self.find_list(q)
-    fixedindex = Fixedindex.search(query:{match:{:institution: q}})
+    fixedindex = FixedIndex.search(query:{match:{:institution q}})
     return fixedindex
     rescue => ex
       return nil
