@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   get '/search' => 'search#search'
   get 'admin' => 'admin#index'
-
+  get 'users/:id/delete' => 'users#destroy', :as => :delete_user
   #Start single document routs
   get 'ecodes/:org/:id' => 'documents#show', :as => :show_document
   get 'ecodes/:org/:id/edit'=> 'documents#edit', :as => :edit_document
