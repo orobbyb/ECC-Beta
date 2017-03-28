@@ -1,4 +1,3 @@
-
 <head>
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -8,11 +7,18 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
 <script>
-
 $(document).ready(function() {
+$('.datepicker').pickadate({   
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 1000, // Creates a dropdown of 10 years to control year
+	    min: [1850,1,1],
+	    max: true,
+            format: 'dd-mm-yyyy',
+            closeOnSelect: true,
+            closeOnClear: true
+        });
     $('select').material_select();
   });
-
 </script>
   <link rel="stylesheet" type="text/css" href="/css/trix.css">
   <script type="text/javascript" src="/js/trix.js"></script>
@@ -33,64 +39,83 @@ $(document).ready(function() {
   <% end %>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.label :disclaimer %>
-    <%= f.text_area :disclaimer %>
+    <%= f.label :year %>
+    <%= f.text_area :year %>
   </div>
 
-  <%#Trix: Rich Test Editor Component%>
+  <div class="field">
+    <%= f.label :institution %>
+    <%= f.text_field :institution %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contributor %>
+    <%= f.text_field :contributor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :code_versions %>
+    <%= f.text_field :code_versions %>
+  </div>
+
   <div>
-    <input id="body" value="Editor content goes here" type="hidden" name="body">
-    <trix-editor input="body"></trix-editor>
+    <%= f.label :date_publish %>
+    <%= f.text_field :date_publish, :class=> "datepicker"%>
   </div>
 
-  <input type="date" class="datepicker">
-    <%= f.label :date %>
-    <%= f.date_select :date %>
-  </div>
-
-  <div class="field">
-    <%= f.label :organization_url %>
-    <%= f.text_field :organization_url %>
+  <div>
+    <%= f.label :ecc_date %>
+    <%= f.text_field :ecc_date, :class=> "datepicker"%>
   </div>
 
   <div class="field">
-    <%= f.label :source_value %>
-    <%= f.text_field :source_value %>
+    <%= f.label :author_site %>
+    <%= f.text_field :author_site %>
   </div>
 
   <div class="field">
-    <%= f.label :source_url %>
-    <%= f.text_field :source_url %>
+    <%= f.label :orig_url %>
+    <%= f.text_field :orig_url %>
   </div>
 
   <div class="field">
-    <%= f.label :version %>
-    <%= f.text_field :version %>
+    <%= f.label :description %>
+    <%= f.trix_editor :description %>
   </div>
-  
-  <div class="input-field col s12">
-    <select multiple>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="business">Business</option>
-      <option value="life sciences">Life Sciences</option>
-      <option value="physical sciences">Physical Sciences</option>
-      <option value="engineering">Engineering</option>
-      <option value="social and behavorial sciences">Social and Behavorial Sciences</option>
-      <option value="arts and humanities">Arts and Humanities</option>
-    </select>
-    <label>Category</label>
-    <%= f.label :category %>
-    <%= f.text_field :category %>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :doi %>
+    <%= f.text_field :doi %>
+  </div>
+
+  <div class="field">
+    <%= f.label :copyright %>
+    <%= f.text_area :copyright %>
   </div>
 
   <div class="field">
     <%= f.label :topics %>
-    <%= f.text_field :topics %>
+    <%= f.text_area :topics %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fields %>
+    <%= f.text_area :fields %>
+  </div>
+
+  <div class="field">
+    <%= f.label :backup_url %>
+    <%= f.text_field :backup_url %>
   </div>
 
   <div class="actions">

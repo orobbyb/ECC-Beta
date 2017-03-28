@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   
+  
   get '/search' => 'search#search'
   get 'admin' => 'admin#index'
 
   #Start single document routs
-  get 'ecodes/:org/:id' => 'documents#show', :as => :document
+  get 'ecodes/:org/:id' => 'documents#show', :as => :show_document
   get 'ecodes/:org/:id/edit'=> 'documents#edit', :as => :edit_document
   patch 'ecodes/:org/:id' => 'documents#update'
   get '/documents/new', to: 'documents#new'
   post '/documents', to: 'documents#create'
-  delete 'ecodes/:category/:org/:id' => 'documents#destroy'
+  get 'ecodes/:org/:id/delete' => 'documents#destroy', :as => :delete_document
   #End single Document Routes
   resources :documents
   controller :sessions do

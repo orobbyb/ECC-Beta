@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  # skip_before_action :authorize
+  skip_before_action :authorize, only: [:create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.order(:name)
+    @users = User.all
   end
 
   # GET /users/1

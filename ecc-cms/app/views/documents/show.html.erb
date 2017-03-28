@@ -1,43 +1,68 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @document.year %>
+</p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @document.institution %>
+</p>
+
+<p>
+  <strong>Contributor:</strong>
+  <%= @document.contributor %>
+</p>
+
+<p>
+  <strong>Code versions:</strong>
+  <%= @document.code_versions %>
+</p>
+
+<p>
+  <strong>Date publish:</strong>
+  <%= @document.date_publish %>
+</p>
+
+<p>
+  <strong>Ecc date:</strong>
+  <%= @document.ecc_date %>
+</p>
+
+<p>
+  <strong>Author site:</strong>
+  <%= @document.author_site %>
+</p>
+
+<p>
+  <strong>Orig url:</strong>
+  <%= @document.orig_url %>
+</p>
+
+<p>
   <strong>Description:</strong>
-  <%= @document.description %>
+  <%= @document.description.html_safe %>
 </p>
 
 <p>
-  <strong>Disclaimer:</strong>
-  <%= @document.disclaimer %>
+  <strong>Notes:</strong>
+  <%= @document.notes %>
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @document.date %>
+  <strong>Doi:</strong>
+  <%= @document.doi %>
 </p>
 
 <p>
-  <strong>Organization url:</strong>
-  <%= @document.organization_url %>
-</p>
-
-<p>
-  <strong>Source value:</strong>
-  <%= @document.source_value %>
-</p>
-
-<p>
-  <strong>Source url:</strong>
-  <%= @document.source_url %>
-</p>
-
-<p>
-  <strong>Version:</strong>
-  <%= @document.version %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @document.category %>
+  <strong>Copyright:</strong>
+  <%= @document.copyright %>
 </p>
 
 <p>
@@ -45,6 +70,15 @@
   <%= @document.topics %>
 </p>
 
-<p><%= params['org'] %></p>
+<p>
+  <strong>Fields:</strong>
+  <%= @document.fields %>
+</p>
+
+<p>
+  <strong>Backup url:</strong>
+  <%= @document.backup_url %>
+</p>
+
 <%= link_to 'Edit', edit_document_path(@document) %> |
 <%= link_to 'Back', documents_path %>

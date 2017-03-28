@@ -2,9 +2,11 @@
 <%#Can be used by adding <%= render "search/search"%>
 
 <div>
-  <%= form_tag("/search", :method => "get") do %>
-    <%= label_tag :query, "Search for:" %>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search" %>
-  <% end %>
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <p>
+          <label for="_search_Search for">Search for</label>
+          <input type="text" name="q" id="q" />
+          <input type="submit" value="Go" data-disable-with="Go" />
+        </p>
+      </form>
 </div>
