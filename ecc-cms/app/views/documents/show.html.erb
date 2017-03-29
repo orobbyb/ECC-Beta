@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+<% if session[:user_id] %>
+	  <%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>
+	  <% else %>
+<%= link_to 'Back', brouse_documents_path %>
+	  <% end %>
 
 <p>
   <strong>Title:</strong>
