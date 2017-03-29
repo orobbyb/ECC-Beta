@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   get '/search' => 'search#search'
   get 'admin' => 'admin#index'
-
+  get '/brouse' => 'documents#brouse', :as => :brouse_documents
   #Start single document routs
   get 'ecodes/:org/:id' => 'documents#show', :as => :show_document
   get 'ecodes/:org/:id/edit'=> 'documents#edit', :as => :edit_document
@@ -24,5 +24,9 @@ Rails.application.routes.draw do
   #Start Static Page Routes
   get '/' => 'static#home'
   get '/about' => 'static#about'
+  get '/whycodes' => 'static#whycodes'
+  get '/collectionpolicy' => 'static#collectionpolicy'
+  get '/contact' => 'static#contact'
+  get '/authoringcode' => 'static#authoringcode'
   #End Static Page Routes
 end

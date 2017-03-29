@@ -5,4 +5,16 @@ class StaticController < ApplicationController
 
   def about
   end
+  
+  def whycodes
+  end
+
+  def contact
+  end
+
+  def authoringcode
+  end
+
+  def collectionpolicy
+  end
 end
