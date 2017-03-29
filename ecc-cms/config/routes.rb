@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   get '/search' => 'search#search'
   get 'admin' => 'admin#index'
-  get '/brouse' => 'documents#brouse', :as => :brouse_documents
+  get '/browse' => 'documents#browse', :as => :browse_documents
   #Start single document routs
   get 'ecodes/:org/:id' => 'documents#show', :as => :show_document
   get 'ecodes/:org/:id/edit'=> 'documents#edit', :as => :edit_document

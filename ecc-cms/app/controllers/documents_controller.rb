@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize, only: [:show, :brouse]
+  skip_before_action :authorize, only: [:show, :browse]
   
   rescue_from Elasticsearch::Persistence::Repository::DocumentNotFound do
     render file: "public/404.html", status: 404, layout: false
@@ -12,7 +12,7 @@ class DocumentsController < ApplicationController
     @documents = Document.all
   end
   
-  def brouse
+  def browse
     @documents = Document.all
   end
   
