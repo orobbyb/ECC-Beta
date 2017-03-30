@@ -44,17 +44,17 @@ $('.datepicker').pickadate({
   </div>
 
   <div class="field">
-    <%= f.label :year %>
+    <%= f.label :year, 'Year Published' %>
     <%= f.text_area :year %>
   </div>
 
   <div class="field">
-    <%= f.label :institution %>
+    <%= f.label :institution, 'Organization' %>
     <%= f.text_field :institution %>
   </div>
 
   <div class="field">
-    <%= f.label :contributor %>
+    <%= f.label :contributor%>
     <%= f.text_field :contributor %>
   </div>
 
@@ -64,27 +64,27 @@ $('.datepicker').pickadate({
   </div>
 
   <div>
-    <%= f.label :date_publish %>
+    <%= f.label :date_publish, 'Date Published' %>
     <%= f.text_field :date_publish, :class=> "datepicker"%>
   </div>
 
   <div>
-    <%= f.label :ecc_date %>
+    <%= f.label :ecc_date,'ECC Date' %>
     <%= f.text_field :ecc_date, :class=> "datepicker"%>
   </div>
 
   <div class="field">
-    <%= f.label :author_site %>
+    <%= f.label :author_site,'Organization URL' %>
     <%= f.text_field :author_site %>
   </div>
 
   <div class="field">
-    <%= f.label :orig_url %>
+    <%= f.label :orig_url, 'Origional URL' %>
     <%= f.text_field :orig_url %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
+    <%= f.label :description, 'Full Text' %>
     <%= f.trix_editor :description %>
   </div>
 
@@ -94,12 +94,12 @@ $('.datepicker').pickadate({
   </div>
 
   <div class="field">
-    <%= f.label :doi %>
+    <%= f.label :doi, 'DOI' %>
     <%= f.text_field :doi %>
   </div>
 
   <div class="field">
-    <%= f.label :copyright %>
+    <%= f.label :copyright,'Copyright' %>
     <%= f.text_area :copyright %>
   </div>
 
@@ -114,7 +114,7 @@ $('.datepicker').pickadate({
   </div>
 
   <div class="field">
-    <%= f.label :backup_url %>
+    <%= f.label :backup_url, 'Backup URL' %>
     <%= f.text_field :backup_url %>
   </div>
 
