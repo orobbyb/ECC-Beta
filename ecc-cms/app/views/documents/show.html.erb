@@ -40,9 +40,9 @@
             <div>
                 <p>Topics</p>
                 <% for @document.topics.split(',').each do |t| %>
-                    <%= '<div class="chips">' %>
-                        <%= t %>
-                    <%= '</div>' %>
+                    <div class="chips">
+                        <%= puts t %>
+                    </div>
                 <% end %>
             </div>
             <div>
