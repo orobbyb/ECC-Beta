@@ -47,10 +47,9 @@
             </div>
             <div>
                 <p>Fields</p>
-                <% for i in 0..@document.fields.split(',').length %>
-                    <%= puts @document.fields.split(',') %>
-                    <div class="chip">
-                        <%= @document.fields.split(',')[i] %>
+                <% @document.fields.split(',').each do |f| %>
+                    <div class='chip'>
+                        <%= f %>
                     </div>
                 <% end %>
             </div>
