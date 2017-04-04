@@ -41,7 +41,7 @@
                 <p>Topics</p>
                 <% @document.topics.split(',').each do |t| %>
                     <div class='chip'>
-                        <%= t.strip! %>
+                        <%= t %>
                     </div>
                 <% end %>
             </div>
