@@ -40,7 +40,7 @@
     $(".dropdown-button").dropdown({
     hover: true
     });
-        
+    $(".button-collapse").sideNav();
   });
   </script>
   </head>
@@ -61,18 +61,33 @@
     <nav>
       <div class="nav-wrapper">
         <a href="images/cseplogo.png" class="brand-logo right"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-small-and-down">
           <li><a href="/">Home</a></li>
-	  <li><a href="/browse">Codes</a></li>
+          <li><a href="/browse">Codes</a></li>
           <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">About<i class="material-icons right">arrow_drop_down</i></a></li>
-	  <% if session[:user_id] %>
-	  <li><a href="/admin"> Admin </a></li>
-	  <li><%= link_to "Log Out", :controller => :sessions, :action=>"destroy" %></li>
-	  <% else %>
-	  <li><a href="/login"> Log In </a></li>
-	  <% end %>
+          <% if session[:user_id] %>
+            <li><a href="/admin"> Admin </a></li>
+            <li><%= link_to "Log Out", :controller => :sessions, :action=>"destroy" %></li>
+          <% else %>
+              <li><a href="/login"> Log In </a></li>
+          <% end %>
         </ul>
       </div>
+      <ul id="mobile-demo" class="side-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/browse">Codes</a></li>
+          <li><a href="/whycodes">Why Codes?</a></li>
+          <li><a href="/authoringcode">Authoring a Code</a></li>
+          <li><a href="/collectionpolicy">Collection Policy</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <% if session[:user_id] %>
+            <li><a href="/admin"> Admin </a></li>
+            <li><%= link_to "Log Out", :controller => :sessions, :action=>"destroy" %></li>
+          <% else %>
+              <li><a href="/login"> Log In </a></li>
+          <% end %>
+        </ul>
     </nav>
 
     <%= yield %>
