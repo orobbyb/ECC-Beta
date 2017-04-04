@@ -39,7 +39,11 @@
             </div>
             <div>
                 <p>Topics</p>
-                <p><%= @document.topics %></p>
+                <% for @document.topics.split(',').each do |t|%>
+                    <div class="chips">
+                        <%= t %>
+                    </div>
+                <% end %>
             </div>
             <div>
                 <p>Fields</p>
