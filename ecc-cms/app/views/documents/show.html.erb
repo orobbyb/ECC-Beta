@@ -1,90 +1,58 @@
 <p id="notice"><%= notice %></p>
-<% if session[:user_id] %>
-	  <%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
-	  <% else %>
-<%= link_to 'Back', browse_documents_path %>
-	  <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @document.title %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @document.year %>
-</p>
-
-<p>
-  <strong>Institution:</strong>
-  <%= @document.institution %>
-</p>
-
-<p>
-  <strong>Contributor:</strong>
-  <%= @document.contributor %>
-</p>
-
-<p>
-  <strong>Code versions:</strong>
-  <%= @document.code_versions %>
-</p>
-
-<p>
-  <strong>Date publish:</strong>
-  <%= @document.date_publish %>
-</p>
-
-<p>
-  <strong>Ecc date:</strong>
-  <%= @document.ecc_date %>
-</p>
-
-<p>
-  <strong>Author site:</strong>
-  <%= @document.author_site %>
-</p>
-
-<p>
-  <strong>Orig url:</strong>
-  <%= @document.orig_url %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @document.description.html_safe %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @document.notes %>
-</p>
-
-<p>
-  <strong>Doi:</strong>
-  <%= @document.doi %>
-</p>
-
-<p>
-  <strong>Copyright:</strong>
-  <%= @document.copyright %>
-</p>
-
-<p>
-  <strong>Topics:</strong>
-  <%= @document.topics %>
-</p>
-
-<p>
-  <strong>Fields:</strong>
-  <%= @document.fields %>
-</p>
-
-<p>
-  <strong>Backup url:</strong>
-  <%= @document.backup_url %>
-</p>
-
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title"><%= @document.title %></span>
+            <div>
+                <p><%= @document.institution + ', ' + @document.date_publish.to_s %></p>
+            </div>
+            <div>
+                <p><%= @document.contributor %></p>
+            </div>
+            <div>
+                <p>Code Versions</p>
+                <p><%= @document.code_versions %></p>
+            </div>
+            <div>
+                <p>Date Posted</p>
+                <p><%= @document.ecc_date %></p>
+            </div>
+            <div>
+                <p>Author Website</p>
+                <span><%= @document.author_site %><a href="<%= @document.orig_url %>"><%= @document.orig_url %></a></%></span>
+            </div>
+            <div>
+                <%= @document.description.html_safe %>
+            </div>
+            <div>
+                <p>Notes</p>
+                <p><%= @document.notes %></p>
+            </div>
+            <div>
+                <p>DOI</p>
+                <p><%= @document.doi %></p>
+            </div>
+            <div>
+                <p>Copyright</p>
+                <p><%= @document.copyright %></p>
+            </div>
+            <div>
+                <p>Topics</p>
+                <p><%= @document.topics %></p>
+            </div>
+            <div>
+                <p>Fields</p>
+                <p><%= @document.fields %></p>
+            </div>
+        </div>
+        <div class="card-action">
+            <% if session[:user_id] %>
+                    <%= link_to 'Back', documents_path, :class => "btn"%>
+                    <%= link_to 'Edit', edit_document_path(@document), :class => "btn"%>
+                <% else %>
+                    <%= link_to 'Back', browse_documents_path %>
+                <% end %>
+        </div>
+    </div>
+</div>
