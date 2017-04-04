@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize, only: [:show]
+  skip_before_action :authorize, only: [:show, :browse]
   
   rescue_from Elasticsearch::Persistence::Repository::DocumentNotFound do
     render file: "public/404.html", status: 404, layout: false
@@ -11,7 +11,11 @@ class DocumentsController < ApplicationController
   def index
     @documents = Document.all
   end
-
+  
+  def browse
+    @documents = Document.all
+  end
+  
   def search 
     #1. Fetch documents by keywords
     #2. Apply other filters 
