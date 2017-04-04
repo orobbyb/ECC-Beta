@@ -41,7 +41,7 @@
                 <p>Topics</p>
                 <% for i in 0..@document.topics.split(',').length %>
                     <div class="chip">
-                        <%= @document.topics.split(',')[i].strip! %>
+                        <%= @document.topics.split(',')[i] %>
                     </div>
                 <% end %>
             </div>
@@ -49,7 +49,7 @@
                 <p>Fields</p>
                 <% for i in 0..@document.fields.split(',').length %>
                     <div class="chip">
-                        <%= @document.fields.split(',')[i].strip! %>
+                        <%= @document.fields.split(',')[i] %>
                     </div>
                 <% end %>
             </div>
