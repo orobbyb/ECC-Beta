@@ -39,11 +39,9 @@
             </div>
             <div>
                 <p>Topics</p>
-                <% @len = @document.topics.split(',').length %>
-                <% for i in 0.. %>
+                <% @document.topics.split(',').each do |t| %>
                     <div class='chip'>
-                        <%= @len %>
-                        <%= @document.topics.split(',')[i] %>
+                        <%= t.strip! %>
                     </div>
                 <% end %>
             </div>
