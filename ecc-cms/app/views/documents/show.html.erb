@@ -39,7 +39,7 @@
             </div>
             <div>
                 <p>Topics</p>
-                <% for i in 0..@document.topics.split(',').length %>
+                <% for i in 0..@document.topics.split(',').length - 1 %>
                     <div class="chip">
                         <%= @document.topics.split(',')[i].strip! %>
                     </div>
@@ -47,7 +47,11 @@
             </div>
             <div>
                 <p>Fields</p>
-                <p><%= @document.fields %></p>
+                <% for i in 0..@document.fields.split(',').length - 1 %>
+                    <div class="chip">
+                        <%= @document.fields.split(',')[i].strip! %>
+                    </div>
+                <% end %>
             </div>
         </div>
         <div class="card-action">
