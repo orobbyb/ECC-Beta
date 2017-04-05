@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<head>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+</head>
 
 <div class="container">
     <div class="card">
@@ -81,3 +83,10 @@
         </div>
     </div>
 </div>
+
+<% if notice %>
+    <script>
+        var message = <%= ("'" + notice.to_s + "'").html_safe %>
+        Materialize.toast(message, 3000);
+    </script>
+<% end %>

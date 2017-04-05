@@ -1,8 +1,4 @@
 <div class="container">
-  <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert] %></p>
-  <% end %>
-
   <%= form_tag do %>
     <fieldset>
       <legend>Please Log In</legend>
@@ -20,3 +16,10 @@
     </fieldset>
   <% end %>
 </div>
+<% if notice %>
+    <script>
+        var message = <%= ("'" + notice.to_s + "'").html_safe %>
+        Materialize.toast(message, 3000);
+    </script>
+<% end %>
+
