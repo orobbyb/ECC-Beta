@@ -4,41 +4,57 @@
     <div class="card">
         <div class="card-content">
             <span class="card-title"><%= @document.title %></span>
-            <div>
-                <p><%= @document.institution + ', ' + @document.date_publish.to_s %></p>
+            <div class="section">
+                <div>
+                    <span style="font-weight: 600">Institution: </span><span><%= @document.institution %></span>
+                </div>
+                <div>
+                    <span style="font-weight: 600">Date Published: </span><span><%= @document.date_publish.to_s %></span>
+                </div>
+                <div>
+                    <span style="font-weight: 600">Contributor: </span><span><%= @document.contributor.length != 0? @document.contributor : "None" %></span>
+                </div>
+                <div>
+                    <span style="font-weight: 600">Code Versions: </span><span><%= @document.code_versions.length != 0? @document.code_versions : "None" %></span>
+                </div>
+                <div>
+                    <span style="font-weight: 600">Date Published: </span><span><%= @document.ecc_date %></span>
+                </div>
+                <div>
+                    <span style="font-weight: 600">Author Site: </span><span><%= @document.author_site.length != 0?@document.author_site : "None" %></span>
+                </div>
+                <div>
+                    <span style="font-weight: 600">Original URL: </span>
+                    <span>
+                        <% if @document.orig_url.length != 0 %>
+                            <a href="<%= @document.orig_url %>">
+                                <%= @document.orig_url %>
+                            </a>
+                        <% else %>
+                            <%= "None" %>
+                        <% end %>
+                    </span>
+                </div>
+                <div>
+                    <span style="font-weight: 600">DOI: </span><span><%= @document.doi.length != 0?@document.doi : "None" %></span>
+                </div>
             </div>
-            <div>
-                <p><%= @document.contributor %></p>
-            </div>
-            <div>
-                <p>Code Versions</p>
-                <p><%= @document.code_versions %></p>
-            </div>
-            <div>
-                <p>Date Posted</p>
-                <p><%= @document.ecc_date %></p>
-            </div>
-            <div>
-                <p>Author Website</p>
-                <span><%= @document.author_site %><a href="<%= @document.orig_url %>"><%= @document.orig_url %></a></%></span>
-            </div>
-            <div>
+            
+            <div class="section">
+                <p style="font-weight: 600">Text</p>
                 <%= @document.description.html_safe %>
             </div>
-            <div>
-                <p>Notes</p>
-                <p><%= @document.notes %></p>
+            <div class="section">
+                <p style="font-weight: 600">Notes</p>
+                <p><%= @document.notes.length != 0? @document.notes : "None" %></p>
             </div>
-            <div>
-                <p>DOI</p>
-                <p><%= @document.doi %></p>
-            </div>
-            <div>
-                <p>Copyright</p>
+            <div class="section">
+                <p style="font-weight: 600">Copyright</p>
                 <p><%= @document.copyright %></p>
             </div>
+        <div class="section">
             <div>
-                <p>Topics</p>
+                <p style="font-weight: 600">Topics</p>
                 <% @document.topics.split(',').each do |t| %>
                     <div class='chip'>
                         <%= t %>
@@ -46,13 +62,14 @@
                 <% end %>
             </div>
             <div>
-                <p>Fields</p>
+                <p style="font-weight: 600">Fields</p>
                 <% @document.fields.split(',').each do |f| %>
                     <div class='chip'>
                         <%= f %>
                     </div>
                 <% end %>
             </div>
+        </div>
         </div>
         <div class="card-action">
             <% if session[:user_id] %>
