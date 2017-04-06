@@ -7,10 +7,23 @@ footer.page-footer-custom {
   padding-top: 20px;
 }
 
-nav.nav-custom {
+.mycontainer {
+    margin: 0 auto;
+  width: 90%;
+}
+
+nav {
   color: #fff;
-  background-color: #ee6e73;
+  background-color: #cc0000;
   width: 100%;
   height: 56px;
   line-height: 56px;
+}
+
+iit-red {
+  background-color: #cc0000;
+}
+
+iit-blue {
+  color: #bbdefb;
 }
