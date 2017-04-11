@@ -75,10 +75,10 @@
         </div>
         <div class="card-action">
             <% if session[:user_id] %>
-                    <%= link_to 'Back', documents_path, :class => "btn"%>
-                    <%= link_to 'Edit', edit_document_path(@document), :class => "btn"%>
+                    <%= link_to 'Back', documents_path, :class => 'white-text red accent-4 btn'%>
+                    <%= link_to 'Edit', edit_document_path(@document), :class => 'white-text red accent-4 btn'%>
                 <% else %>
-                    <%= link_to 'Back', browse_documents_path %>
+                    <%= link_to 'Back', browse_documents_path, :class => 'white-text red accent-4 btn' %>
                 <% end %>
         </div>
     </div>
