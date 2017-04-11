@@ -13,13 +13,16 @@ class DocumentsController < ApplicationController
   
   def browse
     all_docs=Document.all
-    puts all_docs.count
     @documents =  Kaminari.paginate_array(all_docs).page(params[:page]).per(5)
     
   end
 
   # GET /documents/1/edit
   def edit
+  end
+
+  def new
+    @document =Document.new
   end
 
   # POST /documents
