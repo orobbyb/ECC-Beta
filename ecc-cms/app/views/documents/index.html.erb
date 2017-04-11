@@ -3,7 +3,7 @@
 <div class="container">
 <h1>Documents</h1>
 
-<%= link_to 'New Document', new_document_path %>
+<%= link_to 'New Document', new_document_path, class: "white-text red accent-4 btn" %>
 
 <table>
   <thead>
@@ -43,16 +43,16 @@
         <td><%= document.topics %></td>
         <td><%= document.fields %></td>
         <td><%= document.backup_url %></td>-->
-        <td><%= link_to 'Show', document, class: "waves-effect waves-light btn" %></td>
-        <td><%= link_to 'Edit', edit_document_path(:org => document.institution, :id => document.id), class: "waves-effect waves-light btn" %></td>
-        <td><%= link_to 'Destroy', delete_document_path(:org => document.institution, :id => document.id), class: "waves-effect waves-light btn" %></td>
+        <td><%= link_to 'Show', document, class: "white-text red accent-4 btn" %></td>
+        <td><%= link_to 'Edit', edit_document_path(:org => document.institution, :id => document.id), class: "white-text red accent-4 btn" %></td>
+        <td><%= link_to 'Destroy', delete_document_path(:org => document.institution, :id => document.id), class: "white-text red accent-4 btn" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to 'New Document', new_document_path %>
+<%= link_to 'New Document', new_document_path, class: "white-text red accent-4 btn" %>
 
 <br><br><br>
 
