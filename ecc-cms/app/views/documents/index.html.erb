@@ -1,59 +1,43 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <div class="container">
-<h1>Documents</h1>
+  <h1>Documents</h1>
 
-<%= link_to 'New Document', new_document_path, class: "white-text red accent-4 btn" %>
+  <%= link_to 'New Document', new_document_path, class: "white-text red accent-4 btn" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <!--<th>Year</th>
-      <th>Institution</th>
-      <th>Contributor</th>
-      <th>Code versions</th>
-      <th>Date publish</th>
-      <th>Ecc date</th>
-      <th>Author site</th>
-      <th>Orig url</th>
-      <th>Notes</th>
-      <th>Doi</th>
-      <th>Topics</th>
-      <th>Fields</th>
-      <th>Backup url</th>-->
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @documents.each do |document| %>
-      <tr>
-        <td><%= document.title %></td>
-        <!--<td><%= document.year %></td>
-        <td><%= document.institution %></td>
-        <td><%= document.contributor %></td>
-        <td><%= document.code_versions %></td>
-        <td><%= document.date_publish %></td>
-        <td><%= document.ecc_date %></td>
-        <td><a href=<%= document.author_site %>><%= document.author_site %></a></td>
-		<td><a href=<%= document.orig_url %>><%= document.orig_url %></a></td>
-        <td><%= document.notes %></td>
-        <td><%= document.doi %></td>
-        <td><%= document.topics %></td>
-        <td><%= document.fields %></td>
-        <td><%= document.backup_url %></td>-->
-        <td><%= link_to 'Show', document, class: "white-text red accent-4 btn" %></td>
-        <td><%= link_to 'Edit', edit_document_path(:org => document.institution, :id => document.id), class: "white-text red accent-4 btn" %></td>
-        <td><%= link_to 'Destroy', delete_document_path(:org => document.institution, :id => document.id), class: "white-text red accent-4 btn" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @documents.each do |document| %>
+          <tr>
+            <td>
+              <%= document.title %>
+            </td>
+            <td>
+              <%= link_to 'Show', document, class: "white-text red accent-4 btn" %>
+            </td>
+            <td>
+              <%= link_to 'Edit', edit_document_path(:org => document.institution, :id => document.id), class: "white-text red accent-4 btn" %>
+            </td>
+            <td>
+              <%= link_to 'Destroy', delete_document_path(:org => document.institution, :id => document.id), class: "white-text red accent-4 btn" %>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
 
-<br>
-<%= link_to 'New Document', new_document_path, class: "white-text red accent-4 btn" %>
+    <br>
+    <%= link_to 'New Document', new_document_path, class: "white-text red accent-4 btn" %>
 
-<br><br><br>
+      <br><br><br>
 
 </div>
