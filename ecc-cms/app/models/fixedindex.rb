@@ -1,6 +1,6 @@
 require 'elasticsearch/persistence/model'
 
-class FixedIndex
+class Fixedindex
     # Use ES Presistance
     include Elasticsearch::Persistence::Model
 
@@ -23,7 +23,7 @@ class FixedIndex
 
     #type is not defined in fixedindex documents, instead set as 'index' subtype
     def self.fixedList(q)
-      docs = FixedIndex.search index: 'fixedindex', type: q
+      docs = Fixedindex.search index: 'fixedindex', type: q
       return docs
     end 
 
