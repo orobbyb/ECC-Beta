@@ -11,17 +11,15 @@ class Fixedindex
     attribute :type, String, mapping: {index: "not_analyzed"}
     attribute :restrictions, String, mapping: {index: "not_analyzed"}
 
-
-
     def self.fetchIndex()
       docs = Fixedindex.search index:index_name
       for doc in docs
         if doc._type.eql?("institutions")
           @fixedindex.institutions.names.append(doc.name)
           @fixedindex.institutions.docs.append(doc)
-        elsif doc._type.eql?("types")
-          @fixedindex.types.names.append(doc.name)
-          @fixedindex.types.docs.append(doc)
+        elsif doc._type.eql?("topics")
+          @fixedindex.topics.names.append(doc.name)
+          @fixedindex.topics.docs.append(doc)
         elsif doc._type.eql?("fields")
           @fixedindex.fields.names.append(doc.name)
           @fixedindex.fields.docs.append(doc)
