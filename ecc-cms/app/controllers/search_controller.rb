@@ -38,9 +38,7 @@ class SearchController < ApplicationController
 
         }
 
-        @documents = Document.search body:{
-            query: { match: parameters} # parameters should be a json with attributes defined that they want to search for as given below
-        }
+        @documents = Document.search(query: { match: parameters})
         
     end
 end
