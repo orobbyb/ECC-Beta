@@ -1,6 +1,6 @@
 require 'elasticsearch/persistence/model'
 
-class Fixedindex
+class FixedIndex
     # Use ES Presistance
     include Elasticsearch::Persistence::Model
 
@@ -10,7 +10,6 @@ class Fixedindex
     # attributes
     attribute :type, String, mapping: {index: "not_analyzed"}
     attribute :restrictions, String, mapping: {index: "not_analyzed"}
-
 
     #returns the json document containing 
     def self.fetchList(q) #q = one of the fixed list types, currently one of "institutions, field, topics" 
