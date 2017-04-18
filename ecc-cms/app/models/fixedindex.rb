@@ -30,15 +30,6 @@ class Fixedindex
     def self.setInstitutions()
       #institutions = []
       docs = Fixedindex.search index: 'fixedindex', type: 'institutions'
-      docs = docs.to_a
-      for doc in docs
-        @institutions.append(doc.name)
-      end
-    end
-
-    def self.setInstitutions()
-      #institutions = []
-      docs = Fixedindex.search index: 'fixedindex', type: 'institutions'
       for doc in docs
         @institutions.append(doc.name)
       end
@@ -67,12 +58,14 @@ end
   "id_": 
   "type": ["institutions","field","topics"]
   "restrictions": []
-}=end
-
-
+}
 Get /_search
 {
   "query": {
     "bool": 
   }
 }
+
+=end
+
+
