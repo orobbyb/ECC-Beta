@@ -23,18 +23,9 @@ class Fixedindex
 
     #type is not defined in fixedindex documents, instead set as 'index' subtype
     def self.fixedList(q)
-      docs = FixedIndex.search index: 'fixedindex', type: q
+      docs = Fixedindex.search index: 'fixedindex', type: q
       return docs
     end 
-
-    def self.setInstitutions()
-      #institutions = []
-      docs = Fixedindex.search index: 'fixedindex', type: 'institutions'
-      docs = docs.to_a
-      for doc in docs
-        @institutions.append(doc.name)
-      end
-    end
 
     def self.setInstitutions()
       #institutions = []
@@ -61,3 +52,18 @@ class Fixedindex
     end
 end
 
+#fixed_index_documents
+=begin
+{
+  "id_": 
+  "type": ["institutions","field","topics"]
+  "restrictions": []
+}
+Get /_search
+{
+  "query": {
+    "bool": 
+  }
+}
+
+=end
