@@ -11,6 +11,7 @@ class FixedIndex
     attribute :type, String, mapping: {index: "not_analyzed"}
     attribute :restrictions, String, mapping: {index: "not_analyzed"}
 
+=begin
     #returns the json document containing 
     def self.fetchList(q) #q = one of the fixed list types, currently one of "institutions, field, topics" 
       fixedindex = Fixedindex.search(query:{match:{:type=> q}})
@@ -18,12 +19,12 @@ class FixedIndex
       rescue => ex
       return nil
     end
-
+=end
 
     #type is not defined in fixedindex documents, instead set as 'index' subtype
-    def self.fixedList2(q)
-      return FixedIndex.search index: 'fixedindex', type: 'institutions'
-      
+    def self.fixedList(q)
+      docs = FixedIndex.search index: 'fixedindex', type: q
+      return docs
     end 
 
     def self.setInstitutions()
@@ -35,6 +36,29 @@ class FixedIndex
       end
     end
 
+    def self.setInstitutions()
+      #institutions = []
+      docs = Fixedindex.search index: 'fixedindex', type: 'institutions'
+      for doc in docs
+        @institutions.append(doc.name)
+      end
+    end
+
+    def self.setTopics()
+      #institutions = []
+      docs = Fixedindex.search index: 'fixedindex', type: 'topics'
+      for doc in docs
+        @topics.append(doc.name)
+      end
+    end
+
+    def self.setFields()
+      #institutions = []
+      docs = Fixedindex.search index: 'fixedindex', type: 'fields'
+      for doc in docs
+        @fields.append(doc.name)
+      end
+    end
 end
 
 #fixed_index_documents
