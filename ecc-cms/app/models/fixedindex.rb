@@ -1,6 +1,6 @@
 require 'elasticsearch/persistence/model'
 
-class FixedIndex
+class Fixedindex
     # Use ES Presistance
     include Elasticsearch::Persistence::Model
 
@@ -61,18 +61,3 @@ class FixedIndex
     end
 end
 
-#fixed_index_documents
-=begin
-{
-  "id_": 
-  "type": ["institutions","field","topics"]
-  "restrictions": []
-}=end
-
-
-Get /_search
-{
-  "query": {
-    "bool": 
-  }
-}

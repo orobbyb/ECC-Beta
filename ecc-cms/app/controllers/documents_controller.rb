@@ -84,8 +84,8 @@ class DocumentsController < ApplicationController
       @default_copywrite="filler for now"
     end
     def populate_dropdowns
-       @topics = ["test1","test2","test3","test4"]
-       @fields = ["test1","test2","test3","test4"]
-       @institution = ["test1","test2","test3","test4"]
+       @topics = ["test4","tst5","test6"]
+       @fields = ["test1","test2","test3"]
+       @institution = Fixedindex.setInstitutions()
     end
 end
