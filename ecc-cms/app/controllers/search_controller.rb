@@ -12,12 +12,12 @@ class SearchController < ApplicationController
     # end
 
 
-    def searchByParams
-        if params.nil? or params[:parameters].nil? #using 'or' instead of '||' b/c that will eval and fail on the first .nil so the second doesn't error about :parameters not defined
-            @documents = []
-            return
-        end
-        
+    def search
+        # if params.nil? #using 'or' instead of '||' b/c that will eval and fail on the first .nil so the second doesn't error about :parameters not defined
+        #     @documents = []
+        #     return
+        # end
+        puts ">>>Here"
         parameters = {
             title: params[:title],
             year: params[:year],
