@@ -1,6 +1,5 @@
 <div class="container">
   <h1>Codes</h1>
-  <%= paginate(@documents) %>
     <% @documents.each do |document| %>
       <div class="row">
         <div class="col s12 m12">
@@ -20,7 +19,9 @@
         </div>
       </div>
       <% end %>
+      <div class="center-align">
         <%=paginate @documents, window: 2%>
+      </div>
 </div>
 </div>
 
