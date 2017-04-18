@@ -42,8 +42,3 @@ attribute :topics, String, mapping: analyzed_and_raw
 attribute :fields, String, mapping: analyzed_and_raw
 attribute :backup_url, String, mapping: analyzed_and_raw=end
 =end
-
-
-=begin
-    
-=end

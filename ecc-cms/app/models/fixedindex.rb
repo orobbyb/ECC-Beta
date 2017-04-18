@@ -19,9 +19,20 @@ class FixedIndex
       return nil
     end
 
-    def setFixedIndex()
-      docs = Fixedindex.search().to_a
-      @institutions
+
+    #type is not defined in fixedindex documents, instead set as 'index' subtype
+    def self.fixedList2(q)
+      return FixedIndex.search index: 'fixedindex', type: 'institutions'
+      
+    end 
+
+    def self.setInstitutions()
+      #institutions = []
+      docs = Fixedindex.search index: 'fixedindex', type: 'institutions'
+      docs = docs.to_a
+      for doc in docs
+        @institutions.append(doc.name)
+      end
     end
 
 end
