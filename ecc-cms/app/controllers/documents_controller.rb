@@ -17,6 +17,10 @@ class DocumentsController < ApplicationController
     
   end
 
+  def new
+    @document = Document.new
+  end
+
   # GET /documents/1/edit
   def edit
   end

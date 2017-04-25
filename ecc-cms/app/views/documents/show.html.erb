@@ -1,33 +1,29 @@
-<head>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-</head>
-
 <div class="container">
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title"><%= @document.title %></span>
-            <div class="section">
-                <div>
-                    <span style="font-weight: 600">Institution: </span><span><%= @document.institution %></span>
-                </div>
-                <div>
-                    <span style="font-weight: 600">Date Published: </span><span><%= @document.date_publish.to_s %></span>
-                </div>
-                <div>
-                    <span style="font-weight: 600">Contributor: </span><span><%= @document.contributor.length != 0? @document.contributor : "None" %></span>
-                </div>
-                <div>
-                    <span style="font-weight: 600">Code Versions: </span><span><%= @document.code_versions.length != 0? @document.code_versions : "None" %></span>
-                </div>
-                <div>
-                    <span style="font-weight: 600">Date Published: </span><span><%= @document.ecc_date %></span>
-                </div>
-                <div>
-                    <span style="font-weight: 600">Author Site: </span><span><%= @document.author_site.length != 0?@document.author_site : "None" %></span>
-                </div>
-                <div>
-                    <span style="font-weight: 600">Original URL: </span>
-                    <span>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"><%= @document.title %></span>
+      <div class="section">
+        <div>
+          <span style="font-weight: 600">Institution: </span><span><%= @document.institution %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Date Published: </span><span><%= @document.date_publish.to_s %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Contributor: </span><span><%= @document.contributor.length != 0? @document.contributor : "None" %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Code Versions: </span><span><%= @document.code_versions.length != 0? @document.code_versions : "None" %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Date Published: </span><span><%= @document.ecc_date %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Author Site: </span><span><%= @document.author_site.length != 0?@document.author_site : "None" %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Original URL: </span>
+          <span>
                         <% if @document.orig_url.length != 0 %>
                             <a href="<%= @document.orig_url %>">
                                 <%= @document.orig_url %>
@@ -36,57 +32,61 @@
                             <%= "None" %>
                         <% end %>
                     </span>
-                </div>
-                <div>
-                    <span style="font-weight: 600">DOI: </span><span><%= @document.doi.length != 0?@document.doi : "None" %></span>
-                </div>
-            </div>
-            
-            <div class="section">
-                <p style="font-weight: 600">Text</p>
-                <%= @document.description.html_safe %>
-            </div>
-            <div class="section">
-                <p style="font-weight: 600">Notes</p>
-                <p><%= @document.notes.length != 0? @document.notes : "None" %></p>
-            </div>
-            <div class="section">
-                <p style="font-weight: 600">Copyright</p>
-                <p><%= @document.copyright %></p>
-            </div>
-        <div class="section">
-            <div>
-                <p style="font-weight: 600">Topics</p>
-                <% @document.topics.split(',').each do |t| %>
-                    <div class='chip'>
-                        <%= t %>
-                    </div>
-                <% end %>
-            </div>
-            <div>
-                <p style="font-weight: 600">Fields</p>
-                <% @document.fields.split(',').each do |f| %>
-                    <div class='chip'>
-                        <%= f %>
-                    </div>
-                <% end %>
-            </div>
         </div>
+        <div>
+          <span style="font-weight: 600">DOI: </span><span><%= @document.doi.length != 0?@document.doi : "None" %></span>
         </div>
-        <div class="card-action">
-            <% if session[:user_id] %>
-                    <%= link_to 'Back', documents_path, :class => "btn"%>
-                    <%= link_to 'Edit', edit_document_path(@document), :class => "btn"%>
-                <% else %>
-                    <%= link_to 'Back', browse_documents_path %>
-                <% end %>
+      </div>
+
+      <div class="section">
+        <p style="font-weight: 600">Text</p>
+        <%= @document.description.html_safe %>
+      </div>
+      <div class="section">
+        <p style="font-weight: 600">Notes</p>
+        <p>
+          <%= @document.notes.length != 0? @document.notes : "None" %>
+        </p>
+      </div>
+      <div class="section">
+        <p style="font-weight: 600">Copyright</p>
+        <p>
+          <%= @document.copyright %>
+        </p>
+      </div>
+      <div class="section">
+        <div>
+          <p style="font-weight: 600">Topics</p>
+          <% @document.topics.split(',').each do |t| %>
+            <div class='chip'>
+              <%= t %>
+            </div>
+            <% end %>
         </div>
+        <div>
+          <p style="font-weight: 600">Fields</p>
+          <% @document.fields.split(',').each do |f| %>
+            <div class='chip'>
+              <%= f %>
+            </div>
+            <% end %>
+        </div>
+      </div>
     </div>
+    <div class="card-action">
+      <% if session[:user_id] %>
+        <%= link_to 'Back', documents_path, :class => 'white-text red accent-4 btn'%>
+          <%= link_to 'Edit', edit_document_path(@document), :class => 'white-text red accent-4 btn'%>
+            <% else %>
+              <%= link_to 'Back', browse_documents_path, :class => 'white-text red accent-4 btn' %>
+                <% end %>
+    </div>
+  </div>
 </div>
 
 <% if notice %>
-    <script>
-        var message = <%= ("'" + notice.to_s + "'").html_safe %>
-        Materialize.toast(message, 3000);
-    </script>
-<% end %>
+  <script>
+    var message = <%= ("'" + notice.to_s + "'").html_safe %>
+      Materialize.toast(message, 3000);
+  </script>
+  <% end %>

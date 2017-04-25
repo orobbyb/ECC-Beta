@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Users</h1>
 
 <table>
@@ -12,9 +13,9 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-	<td><%= link_to 'Destroy', delete_user_path(user,:id => user.id) %></td>
+        <td><%= link_to 'Show', user, class: 'white-text red accent-4 btn'  %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), class: 'white-text red accent-4 btn'  %></td>
+	<td><%= link_to 'Destroy', delete_user_path(user,:id => user.id), class: 'white-text red accent-4 btn'  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,12 +23,12 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
-
+<%= link_to 'New User', new_user_path, class: 'white-text red accent-4 btn'  %>
+<br><br>
 <% if notice %>
     <script>
         var message = <%= ("'" + notice.to_s + "'").html_safe %>
         Materialize.toast(message, 3000);
     </script>
 <% end %>
-
+</div>

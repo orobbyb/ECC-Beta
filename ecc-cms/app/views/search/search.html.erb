@@ -4,7 +4,7 @@
   <p>
     <%= f.label "Search for" %>
     <%= text_field_tag :q, params[:q] %>
-    <%= submit_tag "Go", name: nil %>
+    <%= submit_tag "SEARCH", name: nil, class: 'white-text red accent-4 btn' %>
   </p>
   <% end %>
   <% @documents.each do |document| %>
@@ -20,7 +20,7 @@
 	  </div>
 	</div>
 	<div class="card-action">
-              <%= link_to 'Show',document, class: 'white-text red lighten-1 btn' %>
+              <%= link_to 'Show',document, class: 'white-text red accent-4 btn' %>
 	</div>
       </div>
     </div>
