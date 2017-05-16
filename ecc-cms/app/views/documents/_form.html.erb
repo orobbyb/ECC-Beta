@@ -28,17 +28,17 @@ $('.datepicker').pickadate({
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :year, 'Year Published' %>
-    <%= f.text_area :year %>
+    <%= f.text_area :year, :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :institution, 'Organization' %>
-    <%= f.text_field :institution %>
+    <%= f.select :institution, @institution, :include_blank => true,  :required => true %>
   </div>
 
   <div class="field">
@@ -73,7 +73,7 @@ $('.datepicker').pickadate({
 
   <div class="field">
     <%= f.label :description, 'Full Text' %>
-    <%= f.trix_editor :description %>
+    <%= f.trix_editor :description, :required => true %>
   </div>
 
   <div class="field">
@@ -88,17 +88,18 @@ $('.datepicker').pickadate({
 
   <div class="field">
     <%= f.label :copyright,'Copyright' %>
-    <%= f.text_area :copyright %>
+    <%= f.text_area :copyright , :required => true, :value => @default_copywrite%>
   </div>
 
   <div class="field">
     <%= f.label :topics %>
-    <%= f.text_area :topics %>
+    <%= f.select :topics, @topics, :include_blank => true,  :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :fields %>
-    <%= f.text_area :fields %>
+    <!-- <%= select_tag :fields, options_for_select(@fields), {:include_blank => true, :required => true, :multiple => true} %> dosn't work right now -->
+    <%= f.select :fields, @fields, :include_blank => true,  :required => true %>
   </div>
 
   <div class="field">

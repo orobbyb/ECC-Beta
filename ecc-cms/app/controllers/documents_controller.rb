@@ -23,17 +23,22 @@ class DocumentsController < ApplicationController
 
   # GET /documents/1/edit
   def edit
+    populate_dropdowns
+    get_default_copywrite
   end
 
   def new
     @document =Document.new
+   populate_dropdowns
+    get_default_copywrite
   end
 
   # POST /documents
   # POST /documents.json
   def create
     @document = Document.new(document_params)
-
+    populate_dropdowns
+    get_default_copywrite
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
@@ -78,5 +83,13 @@ class DocumentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def document_params
       params.require(:document).permit(:title, :year, :institution, :contributor, :code_versions, :date_publish, :ecc_date, :author_site, :orig_url, :description, :notes, :doi, :copyright, :topics, :fields, :backup_url)
+    end
+    def get_default_copywrite
+      @default_copywrite="filler for now"
+    end
+    def populate_dropdowns
+       @topics = ["test4","tst5","test6"]
+       @fields = ["test1","test2","test3"]
+       @institution = Fixedindex.setInstitutions()
     end
 end
