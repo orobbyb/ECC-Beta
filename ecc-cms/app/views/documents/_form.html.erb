@@ -1,11 +1,3 @@
-<head>
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-
-<script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-
 <script>
 $(document).ready(function() {
 $('.datepicker').pickadate({   
@@ -20,10 +12,6 @@ $('.datepicker').pickadate({
     $('select').material_select();
   });
 </script>
-  <link rel="stylesheet" type="text/css" href="/css/trix.css">
-  <script type="text/javascript" src="/js/trix.js"></script>
-
-</head>
 
 <%= form_for(document) do |f| %>
   <% if document.errors.any? %>

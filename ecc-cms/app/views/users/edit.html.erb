@@ -1,6 +1,9 @@
+<div class="container">
 <h1>Editing User</h1>
 
 <%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<br>
+<%= link_to 'Show', @user, class: 'white-text red accent-4 btn'  %>
+<%= link_to 'Back', users_path, class: 'white-text red accent-4 btn'  %>
+<br><br>
+</div>
