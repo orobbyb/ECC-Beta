@@ -1,7 +1,11 @@
-<h1>Admin Page</h1>
-<%= link_to "Modify Documents", :controller => :documents %>
-<br>
-<%= link_to "Edit Users", :controller => :users %>
-<br>
-<%= link_to "Log Out", :controller => :sessions, :action=>"destroy" %>
-<br>
+<div class="container">
+  <div class="row">
+    <h5>What do you want to do?</h5>
+  </div>
+  <div class="row">
+    <%= link_to "Modify Documents", {:controller => :documents}, {:class => "white-text red accent-4 btn"} %>
+  </div>
+  <div class="row">
+    <%= link_to "Edit Users", {:controller => :users}, {:class => "white-text red accent-4 btn"} %>
+  </div>
+</div>

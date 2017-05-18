@@ -1,22 +1,24 @@
-<div class="depot_form">
-  <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert] %></p>
-  <% end %>
-
+<div class="container">
+  <h1>Please Log In</h1>
   <%= form_tag do %>
-    <fieldset>
-      <legend>Please Log In</legend>
-      <div>
-	<%= label_tag :name, 'Name:' %>
-	<%= text_field_tag :name, params[:name] %>
-      </div>
-      <div>
-	<%= label_tag :password, 'Password:' %>
-	<%= password_field_tag :password, params[:password] %>
-      </div>
-      <div>
-	<%= submit_tag "Login" %>
-      </div>
-    </fieldset>
+    <div class="input-field">
+      <%= text_field_tag :name, params[:name] %>
+      <label for="name">Name</label>
+    </div>
+    <div class="input-field">
+      <%= password_field_tag :password, params[:password] %>
+      <label for="password">Password</label>
+    </div>
+    <div class="input-field">
+      <%= submit_tag "Login", :class => 'white-text red accent-4 btn' %>
+    </div>
   <% end %>
 </div>
+
+<% if notice %>
+    <script>
+        var message = <%= ("'" + notice.to_s + "'").html_safe %>
+        Materialize.toast(message, 3000);
+    </script>
+<% end %>
+

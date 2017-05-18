@@ -1,90 +1,92 @@
-<p id="notice"><%= notice %></p>
-<% if session[:user_id] %>
-	  <%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
-	  <% else %>
-<%= link_to 'Back', browse_documents_path %>
-	  <% end %>
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"><%= @document.title %></span>
+      <div class="section">
+        <div>
+          <span style="font-weight: 600">Institution: </span><span><%= @document.institution %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Date Published: </span><span><%= @document.date_publish.to_s %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Contributor: </span><span><%= @document.contributor.length != 0? @document.contributor : "None" %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Code Versions: </span><span><%= @document.code_versions.length != 0? @document.code_versions : "None" %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Date Added to ECC: </span><span><%= @document.ecc_date %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Author Site: </span><span><%= @document.author_site.length != 0?@document.author_site : "None" %></span>
+        </div>
+        <div>
+          <span style="font-weight: 600">Original URL: </span>
+          <span>
+                        <% if @document.orig_url.length != 0 %>
+                            <a href="<%= @document.orig_url %>">
+                                <%= @document.orig_url %>
+                            </a>
+                        <% else %>
+                            <%= "None" %>
+                        <% end %>
+                    </span>
+        </div>
+        <div>
+          <span style="font-weight: 600">DOI: </span><span><%= @document.doi.length != 0?@document.doi : "None" %></span>
+        </div>
+      </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @document.title %>
-</p>
+      <div class="section">
+        <p style="font-weight: 600">Text</p>
+        <%= @document.description.html_safe %>
+      </div>
+      <div class="section">
+        <p style="font-weight: 600">Notes</p>
+        <p>
+          <%= @document.notes.length != 0? @document.notes : "None" %>
+        </p>
+      </div>
+      <div class="section">
+        <p style="font-weight: 600">Copyright</p>
+        <p>
+          <%= @document.copyright %>
+        </p>
+      </div>
+      <div class="section">
+        <div>
+          <p style="font-weight: 600">Topics</p>
+          <% @document.topics.split(',').each do |t| %>
+            <div class='chip'>
+              <%= t %>
+            </div>
+            <% end %>
+        </div>
+        <div>
+          <p style="font-weight: 600">Fields</p>
+          <% @document.fields.split(',').each do |f| %>
+            <div class='chip'>
+              <%= f %>
+            </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="card-action">
+      <% if session[:user_id] %>
+        <%= link_to 'Back', documents_path, :class => 'white-text red accent-4 btn'%>
+          <%= link_to 'Edit', edit_document_path(@document), :class => 'white-text red accent-4 btn'%>
+            <% else %>
+              <%= link_to 'Back', browse_documents_path, :class => 'white-text red accent-4 btn' %>
+                <% end %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Year:</strong>
-  <%= @document.year %>
-</p>
-
-<p>
-  <strong>Institution:</strong>
-  <%= @document.institution %>
-</p>
-
-<p>
-  <strong>Contributor:</strong>
-  <%= @document.contributor %>
-</p>
-
-<p>
-  <strong>Code versions:</strong>
-  <%= @document.code_versions %>
-</p>
-
-<p>
-  <strong>Date publish:</strong>
-  <%= @document.date_publish %>
-</p>
-
-<p>
-  <strong>Ecc date:</strong>
-  <%= @document.ecc_date %>
-</p>
-
-<p>
-  <strong>Author site:</strong>
-  <%= @document.author_site %>
-</p>
-
-<p>
-  <strong>Orig url:</strong>
-  <%= @document.orig_url %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @document.description.html_safe %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @document.notes %>
-</p>
-
-<p>
-  <strong>Doi:</strong>
-  <%= @document.doi %>
-</p>
-
-<p>
-  <strong>Copyright:</strong>
-  <%= @document.copyright %>
-</p>
-
-<p>
-  <strong>Topics:</strong>
-  <%= @document.topics %>
-</p>
-
-<p>
-  <strong>Fields:</strong>
-  <%= @document.fields %>
-</p>
-
-<p>
-  <strong>Backup url:</strong>
-  <%= @document.backup_url %>
-</p>
-
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+<% if notice %>
+  <script>
+    var message = <%= ("'" + notice.to_s + "'").html_safe %>
+      Materialize.toast(message, 3000);
+  </script>
+  <% end %>

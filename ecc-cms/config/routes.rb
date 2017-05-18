@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   
-  get '/search' => 'search#search'
+  get '/search' => 'search#search', :as => :search
   get 'admin' => 'admin#index'
   get 'users/:id/delete' => 'users#destroy', :as => :delete_user
   get '/browse' => 'documents#browse', :as => :browse_documents

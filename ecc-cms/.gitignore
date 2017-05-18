@@ -1,12 +1,3 @@
-# Ignore vim temp files
-*.*~
-
-# Ignore emacs temp files
-*.*#
-
-# Ignore Visual Studio configuration folders
-!/.vscode
-
 # Ignore bundler config.
 /.bundle
 
@@ -22,3 +13,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore Elasticsearch configuration files
+/config/elasticsearch.yml
+/config/initializers/elasticsearch.rb

@@ -5,4 +5,8 @@ if Rails.env.development?
   logger.level     = Logger::INFO
   logger.formatter = proc { |s, d, p, m| "\e[2m#{m}\n\e[0m" }
   Elasticsearch::Persistence.client.transport.logger = logger
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> development

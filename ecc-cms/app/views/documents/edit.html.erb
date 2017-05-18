@@ -1,7 +1,11 @@
-<h1>Editing Document</h1>
-<%= link_to 'Back', documents_path %>
+<div class='container'>
+  <h2>Editing Document</h2>
+  <%= link_to 'Back', documents_path, class: 'white-text red accent-4 btn' %>
+    <br><br>
 
-<%= render 'form', document: @document %>
-
-<%= link_to 'Show', @document %> |
-<%= link_to 'Back', documents_path %>
+    <%= render 'form', document: @document %>
+      <br>
+      <%= link_to 'Show', @document, class: 'white-text red accent-4 btn' %>
+        <%= link_to 'Back', documents_path, class: 'white-text red accent-4 btn' %>
+          <br><br>
+</div>

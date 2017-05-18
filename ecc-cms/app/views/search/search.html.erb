@@ -1,19 +1,31 @@
-<h1>Document Search</h1>
-
+<div class="container">
+<h1>Codes</h1>
 <%= form_for search_path, method: :get do |f| %>
   <p>
     <%= f.label "Search for" %>
     <%= text_field_tag :q, params[:q] %>
-    <%= submit_tag "Go", name: nil %>
+    <%= submit_tag "SEARCH", name: nil, class: 'white-text red accent-4 btn' %>
   </p>
-<% end %>
-
-<ul>
-  <% @documents.each do |document| %>
-    <li>
-      <h3>
-        <%= link_to document.title, controller: "documents", action: "show", id: document._id%>
-      </h3>
-    </li>
   <% end %>
-</ul>
+  <% @documents.each do |document| %>
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card medium hoverable">
+	<div class="card-content">
+          <span class="card-title"><%= document.title %></span>
+	  <div class="divider"></div>
+	  <%= document.institution %>
+	  <div class="truncated">
+	  <%= document.description.html_safe %>
+	  </div>
+	</div>
+	<div class="card-action">
+              <%= link_to 'Show',document, class: 'white-text red accent-4 btn' %>
+	</div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%= paginate(@documents) %>
+</div>
+</div>
