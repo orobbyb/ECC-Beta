@@ -15,8 +15,7 @@ The Ethics Codes Collection (ECC) is the largest database of codes of ethics and
 
 **Easier to Search:**
 
-  The old site used a basic text search which was not always optimal. This version uses Elastic Search to allow for more advanced       
-querries.
+  The old site used a basic text search which was not always optimal. This version uses Elastic Search to allow for more advanced    queries.
 
 **Easier to View:**
 
