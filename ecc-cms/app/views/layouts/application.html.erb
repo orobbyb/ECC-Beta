@@ -48,7 +48,7 @@
 <body>
 
   <%= image_tag 'Banner.png', :class => "ECC-Banner"%>
-    
+
     <ul id="dropdown1" class="dropdown-content">
       <li><a href="/whycodes">Why Codes?</a></li>
       <li><a href="/authoringcode">Authoring a Code</a></li>
@@ -74,6 +74,7 @@
               <% end %>
         </ul>
       </div>
+
       <ul id="mobile-demo" class="side-nav">
         <li><a href="/">Home</a></li>
         <li><a href="/browse">Codes</a></li>
@@ -81,14 +82,15 @@
         <li><a href="/authoringcode">Authoring a Code</a></li>
         <li><a href="/collectionpolicy">Collection Policy</a></li>
         <li><a href="/contact">Contact Us</a></li>
+
         <% if session[:user_id] %>
           <li><a href="/admin"> Admin </a></li>
           <li>
             <%= link_to "Log Out", :controller => :sessions, :action=>"destroy" %>
           </li>
-          <% else %>
-            <li><a href="/login"> Log In </a></li>
-            <% end %>
+        <% else %>
+          <li><a href="/login"> Log In </a></li>
+        <% end %>
       </ul>
     </nav>
 
