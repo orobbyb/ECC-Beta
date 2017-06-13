@@ -2805,7 +2805,7 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (max-width: 947px) {
+@media only screen and (max-width: 992px) {
   .hide-on-med-and-down {
     display: none !important;
   }
