@@ -2,8 +2,11 @@
 <html>
 
 <head>
+
   <title>Ethics Code Collection</title>
+
   <link rel="shortcut icon" href="/images/iiticon.png" />
+
   <meta charset="utf-8">
 
   <!--Mobile specific-->
@@ -11,11 +14,14 @@
 
   <!--Import Google Icon Font-->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+  <!--materialize.min.css commented out to try and sort out inheritance issues -->
+  <!--<link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" /> -->
   <link type="text/css" rel="stylesheet" href="/css/materialize.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="/css/screen.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="/css/trix.css"/>
+
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/js/materialize.min.js"></script>
@@ -34,6 +40,7 @@
     }
     );
   </script>
+
   <script>
     $(document).ready(function () {
       $('select').material_select();
@@ -43,27 +50,45 @@
       $(".button-collapse").sideNav();
     });
   </script>
+
 </head>
 
 <body>
+  <!-- This shows the ECC logo banner across all pages... commented out because it looks cleaner without it. -->
+  <!-- <%= image_tag 'Banner.png', :class => "ECC-Banner"%> -->
 
-  <%= image_tag 'Banner.png', :class => "ECC-Banner"%>
-    
     <ul id="dropdown1" class="dropdown-content">
       <li><a href="/whycodes">Why Codes?</a></li>
-      <li><a href="/authoringcode">Authoring a Code</a></li>
+      <li><a href="/authoringcode">Authoring Codes</a></li>
       <li><a href="/collectionpolicy">Collection Policy</a></li>
-      <li><a href="/contact">Contact Us</a></li>
     </ul>
 
     <nav>
       <div class="nav-wrapper">
-        <a href="images/cseplogo.png" class="brand-logo right"></a>
+
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="left hide-on-small-and-down">
-          <li><a href="/">Home</a></li>
-          <li><a href="/search?utf8=✓&q=">Codes</a></li>
+        <div class="mycontainer">
+
+        <div class="hide-on-large-only">
+        <a href="/" class="brand-logo center"><%= image_tag "ecclogo.png" %></a>
+        </div>
+
+        <ul id="nav-left" class="left hide-on-med-and-down">
+
+          <li><a href="/" class="brand-logo"><%= image_tag "ecclogo.png" %></a></li>
+
+          <!-- <li class="ecc-name"><a href="/">Ethics Codes Collection</a></li> -->
+          <!-- commented out above item while working on getting the ecc logo to appear correctly -->
+
+          <li><a href="/search?utf8=✓&q=">Browse</a></li>
+          <li><a href="/">Search</a></li>
+          <li><a href="/">Learn</a></li>
+          <li><a href="/">Engage</a></li>
+        </ul>
+        <ul id="nav-right" class="right hide-on-med-and-down">
           <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">About<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="/">Contact</a></li>
+          <li><a href="/">User Guide</a></li>
           <% if session[:user_id] %>
             <li><a href="/admin"> Admin </a></li>
             <li>
@@ -74,21 +99,27 @@
               <% end %>
         </ul>
       </div>
+      </div>
+
       <ul id="mobile-demo" class="side-nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/browse">Codes</a></li>
+        <li><a href="/">Ethics Codes Collection</a></li>
+        <li><a href="/search?utf8=✓&q=">Browse</a></li>
+        <li><a href="/">Search</a></li>
+        <li><a href="/">Learn</a></li>
+        <li><a href="/">Engage</a></li>
         <li><a href="/whycodes">Why Codes?</a></li>
-        <li><a href="/authoringcode">Authoring a Code</a></li>
+        <li><a href="/authoringcode">Authoring Codes</a></li>
         <li><a href="/collectionpolicy">Collection Policy</a></li>
-        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/">Contact</a></li>
+        <li><a href="/">User Guide</a></li>
         <% if session[:user_id] %>
           <li><a href="/admin"> Admin </a></li>
           <li>
             <%= link_to "Log Out", :controller => :sessions, :action=>"destroy" %>
           </li>
-          <% else %>
-            <li><a href="/login"> Log In </a></li>
-            <% end %>
+        <% else %>
+          <li><a href="/login"> Log In </a></li>
+        <% end %>
       </ul>
     </nav>
 
