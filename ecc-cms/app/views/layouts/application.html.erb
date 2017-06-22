@@ -62,7 +62,7 @@
       <li><a href="/authoringcode">Authoring Codes</a></li>
       <li><a href="/collectionpolicy">Collection Policy</a></li>
     </ul>
-
+  <header>
     <nav>
       <div class="nav-wrapper">
 
@@ -70,25 +70,25 @@
         <div class="mycontainer">
 
         <div class="hide-on-large-only">
-        <a href="/" class="brand-logo center"><%= image_tag "ecclogo.png" %></a>
+        <a href="/" class="brand-logo center" alt="Ethics Codes Collection logo" title="Ethics Codes Collection home"><%= image_tag "ecclogo.png" %></a>
         </div>
 
         <ul id="nav-left" class="left hide-on-med-and-down">
 
-          <li><a href="/" class="brand-logo"><%= image_tag "ecclogo.png" %></a></li>
+          <li><a href="/" class="brand-logo" alt="Ethics Codes Collection logo" title="Ethics Codes Collection home"><%= image_tag "ecclogo.png" %></a></li>
 
           <!-- <li class="ecc-name"><a href="/">Ethics Codes Collection</a></li> -->
           <!-- commented out above item while working on getting the ecc logo to appear correctly -->
 
           <li><a href="/search?utf8=✓&q=">Browse</a></li>
           <li><a href="/">Search</a></li>
-          <li><a href="/">Learn</a></li>
-          <li><a href="/">Engage</a></li>
+          <li><a href="/learn">Learn</a></li>
+          <li><a href="/engage">Engage</a></li>
         </ul>
         <ul id="nav-right" class="right hide-on-med-and-down">
           <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">About<i class="material-icons right">arrow_drop_down</i></a></li>
-          <li><a href="/">Contact</a></li>
-          <li><a href="/">User Guide</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/userguide">User Guide</a></li>
           <% if session[:user_id] %>
             <li><a href="/admin"> Admin </a></li>
             <li>
@@ -105,13 +105,13 @@
         <li><a href="/">Ethics Codes Collection</a></li>
         <li><a href="/search?utf8=✓&q=">Browse</a></li>
         <li><a href="/">Search</a></li>
-        <li><a href="/">Learn</a></li>
-        <li><a href="/">Engage</a></li>
+        <li><a href="/learn">Learn</a></li>
+        <li><a href="/engage">Engage</a></li>
         <li><a href="/whycodes">Why Codes?</a></li>
         <li><a href="/authoringcode">Authoring Codes</a></li>
         <li><a href="/collectionpolicy">Collection Policy</a></li>
-        <li><a href="/">Contact</a></li>
-        <li><a href="/">User Guide</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/userguide">User Guide</a></li>
         <% if session[:user_id] %>
           <li><a href="/admin"> Admin </a></li>
           <li>
@@ -122,6 +122,20 @@
         <% end %>
       </ul>
     </nav>
+  </header>
+
+<div class="container">
+    <p>
+  <h3>The Ethics Codes Collection</h3>
+  </p>
+
+    <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <p>
+        <input type="text" class="searchbar" name="q" id="q" value="" placeholder="Search the Ethics Codes Collection…" />
+        <input class='white-text red accent-4 btn' type="submit" value="Search" data-disable-with="Search" />
+      </p>
+    </form>
+</div>
 
     <%= yield %>
 
@@ -152,5 +166,4 @@
       </div>
     </div>
 </footer>
-
 </html>

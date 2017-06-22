@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  
-  
+
+
   get '/search' => 'search#search', :as => :search
   get 'admin' => 'admin#index'
   get 'users/:id/delete' => 'users#destroy', :as => :delete_user
   get '/browse' => 'documents#browse', :as => :browse_documents
-  
+
   #Start single document routs
   get 'ecodes/:org/:id' => 'documents#show', :as => :show_document
   get 'ecodes/:org/:id/edit'=> 'documents#edit', :as => :edit_document
@@ -30,5 +30,8 @@ Rails.application.routes.draw do
   get '/collectionpolicy' => 'static#collectionpolicy'
   get '/contact' => 'static#contact'
   get '/authoringcode' => 'static#authoringcode'
+  get '/learn' => 'static#learn'
+  get '/engage' => 'static#engage'
+  get '/userguide' => 'static#userguide'
   #End Static Page Routes
 end

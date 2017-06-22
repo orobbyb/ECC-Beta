@@ -5,7 +5,7 @@ class StaticController < ApplicationController
 
   def about
   end
-  
+
   def whycodes
   end
 
@@ -16,5 +16,17 @@ class StaticController < ApplicationController
   end
 
   def collectionpolicy
+  end
+
+  def learn
+  end
+
+  def engage
+  end
+
+  def contact
+  end
+
+  def userguide
   end
 end
