@@ -3363,7 +3363,7 @@ nav ul a span.badge {
 
 .container {
   margin: 0 auto;
-  max-width: 1280px;
+  /*max-width: 1280px;*/
   width: 90%;
 }
 
