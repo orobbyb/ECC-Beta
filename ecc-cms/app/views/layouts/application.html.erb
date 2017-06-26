@@ -102,24 +102,24 @@
       </div>
 
       <ul id="mobile-demo" class="side-nav">
-        <li><a href="/">Ethics Codes Collection</a></li>
-        <li><a href="/search?utf8=✓&q=">Browse</a></li>
-        <li><a href="/">Search</a></li>
-        <li><a href="/learn">Learn</a></li>
-        <li><a href="/engage">Engage</a></li>
-        <li><a href="/whycodes">Why Codes?</a></li>
-        <li><a href="/authoringcode">Authoring Codes</a></li>
-        <li><a href="/collectionpolicy">Collection Policy</a></li>
+        <li><a href="/">Home</a></li>
+        <li class="materialize-red-text"><strong>Collection</strong>
+        <!-- nested list for Collection-related links -->
+          <ul>
+            <li><a href="/">Search</a></li>
+            <li><a href="/">Browse</a></li>
+            <li><a href="/userguide">User Guide</a></li>
+          </ul>
+        </li>
+        <li class="materialize-red-text"><strong>Learning</strong>
+        <!-- nested list for Learning-related links -->
+          <ul>
+            <li><a href="/learn">Learn</a></li>
+            <li><a href="/whycodes">Why Codes?</a></li>
+            <li><a href="/authoringcode">Authoring Codes</a></li>
+          </ul>
+        </li>
         <li><a href="/contact">Contact</a></li>
-        <li><a href="/userguide">User Guide</a></li>
-        <% if session[:user_id] %>
-          <li><a href="/admin"> Admin </a></li>
-          <li>
-            <%= link_to "Log Out", :controller => :sessions, :action=>"destroy" %>
-          </li>
-        <% else %>
-          <li><a href="/login"> Log In </a></li>
-        <% end %>
       </ul>
     </nav>
   </header>
