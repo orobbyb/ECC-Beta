@@ -57,11 +57,19 @@
   <!-- This shows the ECC logo banner across all pages... commented out because it looks cleaner without it. -->
   <!-- <%= image_tag 'Banner.png', :class => "ECC-Banner"%> -->
 
-    <ul id="dropdown1" class="dropdown-content">
+    <ul id="dropdown1-collection" class="dropdown-content">
+      <li><a href="/">Search</a></li>
+      <li><a href="/">Browse</a></li>
+      <li><a href="/userguide">User Guide</a></li>
+      <li><a href="/">Random Ethics Code</a></li>
+    </ul>
+
+    <ul id="dropdown2-learning" class="dropdown-content">
+      <li><a href="/learn">Learn</a></li>
       <li><a href="/whycodes">Why Codes?</a></li>
       <li><a href="/authoringcode">Authoring Codes</a></li>
-      <li><a href="/collectionpolicy">Collection Policy</a></li>
     </ul>
+
   <header>
     <nav>
       <div class="nav-wrapper">
@@ -80,23 +88,12 @@
           <!-- <li class="ecc-name"><a href="/">Ethics Codes Collection</a></li> -->
           <!-- commented out above item while working on getting the ecc logo to appear correctly -->
 
-          <li><a href="/search?utf8=✓&q=">Browse</a></li>
-          <li><a href="/">Search</a></li>
-          <li><a href="/learn">Learn</a></li>
-          <li><a href="/engage">Engage</a></li>
-        </ul>
-        <ul id="nav-right" class="right hide-on-med-and-down">
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">About<i class="material-icons right">arrow_drop_down</i></a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/userguide">User Guide</a></li>
-          <% if session[:user_id] %>
-            <li><a href="/admin"> Admin </a></li>
-            <li>
-              <%= link_to "Log Out", :controller => :sessions, :action=>"destroy" %>
-            </li>
-            <% else %>
-              <li><a href="/login"> Log In </a></li>
-              <% end %>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1-collection" data-beloworigin="true">Collection<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown2-learning" data-beloworigin="true">Learning<i class="material-icons right">arrow_drop_down</i></a></li>
+
+        <!-- commenting out old dropdown menu code -->
+        <!-- <ul id="nav-right" class="right hide-on-med-and-down"> -->
+
         </ul>
       </div>
       </div>
@@ -109,6 +106,7 @@
             <li><a href="/">Search</a></li>
             <li><a href="/">Browse</a></li>
             <li><a href="/userguide">User Guide</a></li>
+            <li><a href="/">Random Ethics Code</a></li>
           </ul>
         </li>
         <li class="materialize-red-text"><strong>Learning</strong>
@@ -147,6 +145,16 @@
   <div class="container">
     <div class="row">
       <!--<h5>RESOURCES</h5>-->
+      <div class="col l3 m6 s12">
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <p>Sponsors</p>
+          </li>
+          <li><a href="https://www.macfound.org/" alt="MacArthur Foundation logo" title="MacArthur Foundation"><%= image_tag "MacArthur-logo.jpg" %></a></li>
+          <li><a href="https://ethics.iit.edu/" alt="Center for the Study of Ethics in the Professions logo" title="Center for the Study of Ethics in the Professions"><%= image_tag "CSEP-logo.jpg" %></a></li>
+          <li><a href="https://www.iit.edu/" alt="Illinois Institute of Technology logo" title="Illinois Institute of Technology"><%= image_tag "IIT-logo.jpg" %></a></li>
+      </div>
+
       <div class="col l3 m6 s12">
         <ul class="collection with-header">
           <li class="collection-header">
