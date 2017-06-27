@@ -3104,7 +3104,7 @@ td, th {
   background-color: #76777b;
   border-bottom: 1px dotted #ffffff;
   color: #fff;
-  padding: 0px 20px;
+  /*padding: 0px 20px;*/
 }
 
 .collection.with-header .collection-item {
@@ -8606,5 +8606,5 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   margin: 0 auto;
   display: inline;
   list-style-type: none;
-  padding-right: 20px;
+  padding-right: 1em;
 }
