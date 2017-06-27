@@ -3030,11 +3030,12 @@ td, th {
 }
 
 .collection .collection-item {
-  background-color: #fff;
+  background-color: #76777b;
   line-height: 1.5rem;
   padding: 10px 20px;
   margin: 0;
-  border-bottom: 1px solid #e0e0e0;
+  color: #fff;
+  /*border-bottom: 1px solid #e0e0e0; */
 }
 
 .collection .collection-item.avatar {
@@ -3091,16 +3092,20 @@ td, th {
 .collection a.collection-item {
   display: block;
   transition: .25s;
-  color: #26a69a;
+  color: #fff;
 }
 
 .collection a.collection-item:not(.active):hover {
-  background-color: #ddd;
+  /*background-color: #ddd;*/
+  color: #ff9900;
 }
 
 .collection.with-header .collection-header {
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #76777b;
+  /* border-bottom: 1px solid #e0e0e0; */
+
+  color: #fff;
+
   padding: 10px 20px;
 }
 
@@ -5261,7 +5266,7 @@ button.btn-floating {
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
-  color: #26a69a;
+  color: #000;
   display: block;
   line-height: 22px;
   padding: 14px 16px;
