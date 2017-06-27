@@ -8600,6 +8600,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 /* Custom Classes */
 
 #social-list li {
+  margin: 0 auto;
   display: inline;
   list-style-type: none;
   padding-right: 20px;
