@@ -3102,11 +3102,9 @@ td, th {
 
 .collection.with-header .collection-header {
   background-color: #76777b;
-  /* border-bottom: 1px solid #e0e0e0; */
-
+  border-bottom: 1px dotted #ffffff;
   color: #fff;
-
-  padding: 10px 20px;
+  padding: 0px 20px;
 }
 
 .collection.with-header .collection-item {
