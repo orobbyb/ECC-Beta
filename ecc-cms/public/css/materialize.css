@@ -8596,3 +8596,11 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     margin-bottom: 5em;
   }
 }
+
+/* Custom Classes */
+
+#social-list li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
